@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Hyscere的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hyscere">
+<meta property="og:url" content="http://yoursite.com/page/7/index.html">
+<meta property="og:site_name" content="Hyscere">
+<meta property="og:description" content="Hyscere的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Hyscere">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>Hyscere</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hyscere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/%E3%80%8CCTS2019-CTSC2019%E3%80%8D%E9%9A%8F%E6%9C%BA%E7%AB%8B%E6%96%B9%E4%BD%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/24/%E3%80%8CCTS2019-CTSC2019%E3%80%8D%E9%9A%8F%E6%9C%BA%E7%AB%8B%E6%96%B9%E4%BD%93/" class="post-title-link" itemprop="url">「CTS2019 | CTSC2019」随机立方体</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-24 15:56:48 / 修改时间：16:24:13" itemprop="dateCreated datePublished" datetime="2019-09-24T15:56:48+08:00">2019-09-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>题目链接：<a href="https://loj.ac/problem/3119" target="_blank" rel="noopener">https://loj.ac/problem/3119</a>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/24/%E3%80%8CCTS2019-CTSC2019%E3%80%8D%E9%9A%8F%E6%9C%BA%E7%AB%8B%E6%96%B9%E4%BD%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/%E3%80%8CJOI-2018-Final%E3%80%8D%E6%AF%92%E8%9B%87%E8%B6%8A%E7%8B%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/23/%E3%80%8CJOI-2018-Final%E3%80%8D%E6%AF%92%E8%9B%87%E8%B6%8A%E7%8B%B1/" class="post-title-link" itemprop="url">「JOI 2018 Final」毒蛇越狱</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-23 09:07:07" itemprop="dateCreated datePublished" datetime="2019-09-23T09:07:07+08:00">2019-09-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-03 14:29:50" itemprop="dateModified" datetime="2019-10-03T14:29:50+08:00">2019-10-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>题目链接：<a href="https://loj.ac/problem/2351" target="_blank" rel="noopener">https://loj.ac/problem/2351</a>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/23/%E3%80%8CJOI-2018-Final%E3%80%8D%E6%AF%92%E8%9B%87%E8%B6%8A%E7%8B%B1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/%E3%80%8CCTS2019-CTSC2019%E3%80%8D%E7%8F%8D%E7%8F%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/22/%E3%80%8CCTS2019-CTSC2019%E3%80%8D%E7%8F%8D%E7%8F%A0/" class="post-title-link" itemprop="url">「CTS2019 | CTSC2019」珍珠</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-22 17:25:05 / 修改时间：18:06:39" itemprop="dateCreated datePublished" datetime="2019-09-22T17:25:05+08:00">2019-09-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>题目链接：<a href="https://loj.ac/problem/3120" target="_blank" rel="noopener">https://loj.ac/problem/3120</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/22/%E3%80%8CCTS2019-CTSC2019%E3%80%8D%E7%8F%8D%E7%8F%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/20/%E5%8D%95%E4%BD%8D%E6%A0%B9%E5%8F%8D%E6%BC%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/20/%E5%8D%95%E4%BD%8D%E6%A0%B9%E5%8F%8D%E6%BC%94/" class="post-title-link" itemprop="url">单位根反演</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-20 15:25:54 / 修改时间：17:13:30" itemprop="dateCreated datePublished" datetime="2019-09-20T15:25:54+08:00">2019-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>先扔个题引入吧<del>(好像大家学这玩意第一题都写的是这个)</del>：</p>
+<blockquote>
+<p>给定$n,s,a_0,a_1,a_2,a_3$，求：</p>
+<script type="math/tex; mode=display">
+\sum_{i=0}^{n}\binom{n}{i}s^ia_{i\bmod 4}</script><p>其中$n\leqslant 1e18$。</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/20/%E5%8D%95%E4%BD%8D%E6%A0%B9%E5%8F%8D%E6%BC%94/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/Codeforces-Round-528-Div-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/17/Codeforces-Round-528-Div-1/" class="post-title-link" itemprop="url">Codeforces Round #528 (Div. 1)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-17 21:08:22 / 修改时间：21:10:47" itemprop="dateCreated datePublished" datetime="2019-09-17T21:08:22+08:00">2019-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1086" target="_blank" rel="noopener">https://codeforces.com/contest/1086</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/17/Codeforces-Round-528-Div-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/Good-Bye-2018-CF-contest-1091/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/17/Good-Bye-2018-CF-contest-1091/" class="post-title-link" itemprop="url">Good Bye 2018 (CF contest 1091)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-17 09:05:45 / 修改时间：09:06:41" itemprop="dateCreated datePublished" datetime="2019-09-17T09:05:45+08:00">2019-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1091" target="_blank" rel="noopener">https://codeforces.com/contest/1091</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/17/Good-Bye-2018-CF-contest-1091/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/hello%202019/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/15/hello%202019/" class="post-title-link" itemprop="url">hello 2019 (CF contest 1097)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-15 20:55:29 / 修改时间：20:57:33" itemprop="dateCreated datePublished" datetime="2019-09-15T20:55:29+08:00">2019-09-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1097" target="_blank" rel="noopener">https://codeforces.com/contest/1097</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/15/hello%202019/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%8D%B7%E7%A7%AF%E4%B8%8E%E6%9D%9C%E6%95%99%E7%AD%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/12/%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%8D%B7%E7%A7%AF%E4%B8%8E%E6%9D%9C%E6%95%99%E7%AD%9B/" class="post-title-link" itemprop="url">狄利克雷卷积与杜教筛</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-12 21:55:29" itemprop="dateCreated datePublished" datetime="2019-09-12T21:55:29+08:00">2019-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 16:23:14" itemprop="dateModified" datetime="2020-01-15T16:23:14+08:00">2020-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h2 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h2><h3 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h3><p><strong>定义：</strong></p>
+<p>对于数论函数$f$，若对于任意互质的数$x,y$，满足$f(x<em>y)=f(x)</em>f(y)$，则$f$为一个积性函数。</p>
+<p>事实上，我们见过的大部分数论函数都是积性函数，常见的如：</p>
+<ul>
+<li>$\mu(x)$，莫比乌斯函数，在莫比乌斯反演有讨论过。</li>
+<li>$\varphi(x)$，欧拉函数。</li>
+<li>$d(x)$，表示$x$的约数个数。</li>
+<li>$\sigma(x)$，约数和函数。</li>
+<li>$\epsilon(x)$，狄利克雷卷积的原函数，即$\epsilon(x)=[x=0]$。</li>
+<li>$id(x)$，定义$id(x)=x$。</li>
+<li>$I(x)$，定义$I(x)$函数值恒为$1$，即$I(x)=1$。</li>
+</ul>
+<p>这只是一小部分，其中有些函数的性质待会会分析。</p>
+<h3 id="狄利克雷卷积-1"><a href="#狄利克雷卷积-1" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h3><p><strong>定义：</strong></p>
+<p>对于数论函数$f$和$g$，定义它们的狄利克雷卷积为：</p>
+<script type="math/tex; mode=display">
+(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><p>其中$(f*g)$表示$f$和$g$的狄利克雷卷积。</p>
+<p>然后有一个很重要的性质，对于积性函数$f$和$g$，它们的狄利克雷卷积也是个积性函数。</p>
+<p>证明很简单，设质数$p$和$n$互质，则：</p>
+<script type="math/tex; mode=display">
+(f*g)(np)=\sum_{d|np}f(d)g(\frac{np}{d})</script><p>然后展开：</p>
+<script type="math/tex; mode=display">
+(f*g)(np)=\sum_{d|n}f(d)g(\frac{np}{d})+\sum_{d|n}f(pd)g(\frac{n}{d})</script><p>由于$f,g$为积性函数，可以拆开提出来：</p>
+<script type="math/tex; mode=display">
+(f*g)(np)=(g(p)+f(p))\sum_{d|n}f(d)g(\frac{n}{d})</script><p>注意到第一项就是$(f<em>g)(1)$，第二项为$(f</em>g)(n)$，所以：</p>
+<script type="math/tex; mode=display">
+(f*g)(np)=(f*g)(n)*(f*g)(p)</script><p>命题得证。</p>
+<p>根据这个，可以有效的判断函数是否为积性函数。</p>
+<p>狄利克雷卷积具有的一些性质：</p>
+<ul>
+<li>交换律：$f<em>g=g</em>f$。</li>
+<li>结合律：$f<em>(g</em>h)=(f<em>g)</em>h$。</li>
+</ul>
+<p>证明很显然，这里就不赘述了。</p>
+<p>然后考虑一些常见函数的狄利克雷卷积：</p>
+<p>1．$\epsilon(x)$。</p>
+<p>对于任意数论函数$f$，根据定义，拿一个卷上一个$\epsilon$，得到：</p>
+<script type="math/tex; mode=display">
+(f*\epsilon)(n)=\sum_{d|n}f(d)\epsilon(\frac{n}{d})=f(n)</script><p>即$f*\epsilon=f$，</p>
+<p>然后我们可以惊奇的发现，卷完了之后得到了他本身，所以说这个函数就是狄利克雷卷积的单位元。</p>
+<p>2．$\mu(x)$。</p>
+<p>首先我们知道这样一个式子：</p>
+<script type="math/tex; mode=display">
+\sum_{d|n}\mu(d)=[n=1]</script><p>写成狄利克雷卷积形式就是：</p>
+<script type="math/tex; mode=display">
+\mu*I=\epsilon</script><p>３．$\varphi(x)$。</p>
+<p>这个函数有一些很妙的性质，比如说(<del>众所周知</del>)：</p>
+<script type="math/tex; mode=display">
+\sum_{d|n}\varphi(x)=n</script><p>证明如下：</p>
+<p>设$f(n)=\sum_{d|n}\varphi(d)$，由上面提到的狄利克雷卷积性质可得，$f$为积性函数。</p>
+<p>对于$n$的每一个质因数进行考虑，即：</p>
+<script type="math/tex; mode=display">
+f(x^{p})=\sum_{d|x^p}\varphi(d)=\sum_{i=0}^p\varphi(x^i)</script><p>因为$\varphi(x^p)=\varphi(x^{p-1})*p$，$\varphi(x)=x-1$可得：</p>
+<script type="math/tex; mode=display">
+f(x^p)＝x-1+\sum_{i=1}^p(x-1)*x^{i}</script><p>由等比数列求和可得$f(x^p)=x^p$，又由$f$为积性函数可得$f(n)=n$，得证。</p>
+<p>写成狄利克雷卷积的形式就是：</p>
+<script type="math/tex; mode=display">
+\varphi*I=id</script><p>然后注意到$\mu*I=\epsilon$，于是尝试在等式两边分别卷上一个$\mu$：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\varphi*(I*\mu)&=id*\mu\\
+\varphi*\epsilon&=id*\mu\\
+\mu*id&=\varphi
+\end{align}</script><p>写成一般形式就是：</p>
+<script type="math/tex; mode=display">
+\sum_{d|n}\mu(d)*\frac{n}{d}=\varphi(n)</script><p>这个式子也很常用的。</p>
+<h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><p><del>前置知识终于讲完了</del></p>
+<p>对于积性函数$f$，现在考虑求$\sum_{i=1}^nf(i)$。</p>
+<p>当然我知道你会线筛，但是有一些小清新(<del>无良</del>)出题人把数据开到$1e9$级别，你就做不了了，所以需要更快的算法。</p>
+<p>设$S(n)=\sum_{i=1}^{n}f(i)$。</p>
+<p>考虑先拿一个函数和$f$做卷积，先不考虑这个函数是啥，先设它为$g$，则：</p>
+<script type="math/tex; mode=display">
+(f*g)(n)=\sum_{d|n}^{n}f(d)g(\frac{n}{d})</script><p>对这个函数前缀和一下：</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n\sum_{d|i}g(d)f(\frac{n}{d})=\sum_{d=1}^{n}g(d)\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}f(i)=\sum_{d=1}^{n}g(d)S(\lfloor\frac{n}{d}\rfloor)</script><p>中间交换求和符号就不赘述了。</p>
+<p>然后有一个很显然的式子：</p>
+<script type="math/tex; mode=display">
+g(1)S(n)=\sum_{d=1}^{n}g(d)S(\lfloor\frac{n}{d}\rfloor)-\sum_{d=2}^{n}g(d)S(\lfloor\frac{n}{d}\rfloor)</script><p>然后把等号右边第一项换一下：</p>
+<script type="math/tex; mode=display">
+S(n)=\sum_{i=1}^{n}(f*g)(i)-\sum_{d=2}^{n}g(d)S(\lfloor\frac{n}{d}\rfloor)</script><p>剩下的事情就很显然了，如果我们能凑出一个$g$，使得它和$f$的卷积的前缀和很好算，它也很好算，我们就可以先预处理出前$1e7$左右的数据，然后记忆化递归处理$S$。</p>
+<p>至于$g$，因题目不同而不同，做多了也就有经验了。</p>
+<p>注意上试是杜教筛的套路试子，如果不会推也没关系，记下来就好了。</p>
+<p>这里还是举几个栗子吧：</p>
+<p>１．$\sum_{i=1}^{n}\mu(i)$.</p>
+<p>首先我们知道一个这样的东西：</p>
+<script type="math/tex; mode=display">
+\mu*I=\epsilon</script><p>对于$\epsilon$的前缀和，显然是$1$，</p>
+<p>所以，令$g(n)=I(n)=1$，得到：</p>
+<script type="math/tex; mode=display">
+S(n)=1-\sum_{i=2}^nS(\frac{n}{i})</script><p>然后数论分块下就行了。</p>
+<p>代码也很简单，记住一定要记忆化。</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span> &gt; Mu;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum_mu</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{</span><br><span class="line">	<span class="keyword">if</span>(n&lt;maxn) <span class="keyword">return</span> mu[n];</span><br><span class="line">	<span class="keyword">if</span>(Mu[n]) <span class="keyword">return</span> Mu[n];</span><br><span class="line">	<span class="keyword">int</span> T=<span class="number">2</span>,res=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(T&lt;=n) {</span><br><span class="line">		<span class="keyword">int</span> pre=T;T=n/(n/T);</span><br><span class="line">		res=res-(T-pre+<span class="number">1</span>)*sum_mu(n/T);T++;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> Mu[n]=res;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>2．$\sum_{i=1}^{n}\varphi(i)*i$。</p>
+<p>这次考虑一个难一点的。</p>
+<p>我们的目的是要找一个$g$，使他们卷起来很好算。</p>
+<p>那么先列出式子：</p>
+<script type="math/tex; mode=display">
+(f*g)(n)=\sum_{i|n}i*\varphi(i)*g(\frac{n}{i})</script><p>然后发现中间有个$i$的系数，可以考虑消去它，于是暂且令$g(n)=n$：</p>
+<script type="math/tex; mode=display">
+(f*g)(n)=\sum_{i|n}n*\varphi(i)=n^2</script><p>然后可以发现这个东西非常好算，因为：</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6}</script><p>所以：</p>
+<script type="math/tex; mode=display">
+S(n)=\frac{n(n+1)(2n+1)}{6}-\sum_{i=2}^{n}i*S(\frac{n}{i})</script><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于一个陌生的函数，如果要求前缀和，先判是不是积性函数，然后通过这个函数的性质进行分析凑$g$，也可以像栗2一样凑，实在不行就一个一个试。</p>
+<p>当然有时候线筛也是很好的，或者可以枚举因数大力算，不要总是纠结于能不能杜教筛。</p>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><a href="https://www.cnblogs.com/hbyer/p/10073676.html" target="_blank" rel="noopener">[bzoj3944] Sum</a></p>
+<p><a href="https://www.cnblogs.com/hbyer/p/10072917.html" target="_blank" rel="noopener">[bzoj4176] Lucas的数论</a></p>
+<p><a href="https://www.cnblogs.com/hbyer/p/10071615.html" target="_blank" rel="noopener">[bzoj4916] 神犇和蒟蒻</a></p>
+<p><a href="https://www.cnblogs.com/hbyer/p/10214066.html" target="_blank" rel="noopener">[bzoj4652]|[Noi2016]循环之美</a></p>
+<p><a href="https://www.cnblogs.com/hbyer/p/10076978.html" target="_blank" rel="noopener">[bzoj3930] [CQOI2015]选数</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/BZOJ2694-Lcm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/12/BZOJ2694-Lcm/" class="post-title-link" itemprop="url">[BZOJ2694] Lcm</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-12 09:22:28 / 修改时间：09:33:21" itemprop="dateCreated datePublished" datetime="2019-09-12T09:22:28+08:00">2019-09-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>定义整数$a,b$，求所有满足一下条件的二元组$(i,j)$的$\rm lcm(i,j)$的和。</p>
+<ul>
+<li>$1\leqslant i\leqslant a,1\leqslant j\leqslant b$。</li>
+<li>$\forall n&gt;1,n^2\not \mid \gcd(i,j)$。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/12/BZOJ2694-Lcm/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/Codeforces%20Round%20530%20(Div.%201)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/11/Codeforces%20Round%20530%20(Div.%201)/" class="post-title-link" itemprop="url">Codeforces Round 530 (Div. 1)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-11 19:22:31" itemprop="dateCreated datePublished" datetime="2019-09-11T19:22:31+08:00">2019-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 16:29:26" itemprop="dateModified" datetime="2020-01-15T16:29:26+08:00">2020-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1098" target="_blank" rel="noopener">https://codeforces.com/contest/1098</a></p>
+<p>前面有些很没意思很简单的题我就不写题解了（</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/11/Codeforces%20Round%20530%20(Div.%201)/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hyscere"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Hyscere</p>
+  <div class="site-description" itemprop="description">Hyscere的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/impossible152090" title="Codeforces → https://codeforces.com/profile/impossible152090" rel="noopener" target="_blank"><i class="fa fa-fw fa-code"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/www.cnblogs.com/hbyer" title="www.cnblogs.com/hbyer">我的博客园链接</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hyscere</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'http://yoursite.com/page/7/',]
+      });
+      });
+  </script>
+
+</body>
+</html>

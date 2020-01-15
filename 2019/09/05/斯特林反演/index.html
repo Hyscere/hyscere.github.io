@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="引入关于斯特林数的定义可以上百度搜…这部分很简单就没写了。 本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。 这里不加说明的给出递推式：  \begin{align}s_1(n,k)&amp;&#x3D;(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\ s_2(n,k)&amp;&#x3D;k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}卷积">
+<meta property="og:type" content="article">
+<meta property="og:title" content="斯特林反演">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/index.html">
+<meta property="og:site_name" content="Hyscere">
+<meta property="og:description" content="引入关于斯特林数的定义可以上百度搜…这部分很简单就没写了。 本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。 这里不加说明的给出递推式：  \begin{align}s_1(n,k)&amp;&#x3D;(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\ s_2(n,k)&amp;&#x3D;k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}卷积">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-05T11:22:10.000Z">
+<meta property="article:modified_time" content="2020-01-15T08:28:06.711Z">
+<meta property="article:author" content="Hyscere">
+<meta property="article:tag" content="数论">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>斯特林反演 | Hyscere</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hyscere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          斯特林反演
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-05 19:22:10" itemprop="dateCreated datePublished" datetime="2019-09-05T19:22:10+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 16:28:06" itemprop="dateModified" datetime="2020-01-15T16:28:06+08:00">2020-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <a id="more"></a>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>关于斯特林数的定义可以上百度搜…这部分很简单就没写了。</p>
+<p>本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。</p>
+<p>这里不加说明的给出递推式：</p>
+<script type="math/tex; mode=display">
+\begin{align}s_1(n,k)&=(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\
+s_2(n,k)&=k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}</script><h2 id="卷积求第二类斯特林数"><a href="#卷积求第二类斯特林数" class="headerlink" title="卷积求第二类斯特林数"></a>卷积求第二类斯特林数</h2><p>首先有一个组合意义很明显的式子：</p>
+<script type="math/tex; mode=display">
+n^k=\sum_{i=0}^{k}s_2(k,i)\binom{n}{i}i!</script><p>就是说$k$个位置填$n$种颜色，我们可以分成若干组，每组颜色不同。</p>
+<p>我们可以把后面的值为$0$的项补全：</p>
+<script type="math/tex; mode=display">
+n^k=\sum_{i=0}^{n}s_2(k,i)\binom{n}{i}i!</script><p>对其进行二项式反演：</p>
+<script type="math/tex; mode=display">
+s_2(k,n)n!=\sum_{i=0}^{n}(-1)^{n-i}\binom{n}{i}i^k</script><p>这个可以写成卷积形式，顺便把变量换下：</p>
+<script type="math/tex; mode=display">
+s_2(n,k)=\sum_{i=0}^k\frac{(-1)^{k-i}}{(k-i)!}\cdot \frac{i^n}{i!}</script><h2 id="阶乘幂"><a href="#阶乘幂" class="headerlink" title="阶乘幂"></a>阶乘幂</h2><p>阶乘幂的定义是这样的：</p>
+<p>上升幂：$x^{\overline n}=\prod_{i=1}^{n}(x+i-1)$。</p>
+<p>下降幂：$x^{\underline n}=\prod_{i=1}^{n}(x-i+1)$。</p>
+<p>显然可以根据组合数的定义得到：</p>
+<script type="math/tex; mode=display">
+x^{\underline n}=\binom{x}{n}n!</script><p>还有两个这样的式子：</p>
+<script type="math/tex; mode=display">
+x^{\overline n}=(-1)^n(-x)^{\underline n}\\
+x^{\underline n}=(-1)^n(-x)^{\overline n}</script><p>把右边拆开就能证明了。</p>
+<h2 id="阶乘幂与斯特林数的转化"><a href="#阶乘幂与斯特林数的转化" class="headerlink" title="阶乘幂与斯特林数的转化"></a>阶乘幂与斯特林数的转化</h2><p>所以上面卷积的第一个式子可以写成这样：</p>
+<script type="math/tex; mode=display">
+n^k=\sum_{i=0}^{k}s_2(k,i)\binom{n}{i}i!=\sum_{i=0}^{k}s_2(k,i)n^{\underline i}</script><p>还有一个<strong>第一类斯特林数和上升幂的关系</strong>：</p>
+<script type="math/tex; mode=display">
+x^{\overline n}=\sum_{i=0}^{n}s_1(n,i)x^i</script><p>可以通过数学归纳来证明：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+x^{\overline {n}}&=(x+n-1)\sum_{i=0}^{n-1}s_1(n-1,i)x^i\\
+&=\sum_{i=0}^{n-1}s_1(n-1,i)x^{i+1}+\sum_{i=0}^{n-1}(n-1)\cdot s_1(n-1,i)x^i\\
+&=\sum_{i=1}^{n}s_1(n-1,i-1)x^{i}+\sum_{i=1}^{n-1}(n-1)\cdot s_1(n-1,i)x^i\\
+&=\sum_{i=1}^{n}\big(s_1(n-1,i-1)+(n-1)s_1(n-1,i)\big)x^{i}\\
+&=\sum_{i=0}^{n}s_1(n,i)x^i
+\end{align}</script><p>注意由于$s_1(n,0)=s_1(n,n+1)=0$，所以中间边界条件其实不需要在意。</p>
+<p>我们把这个式子变一下可以得到一个<strong>第一类斯特林数和下降幂的关系</strong>：</p>
+<script type="math/tex; mode=display">
+x^{\overline n}=\sum_{i=0}^{n}s_1(n,i)x^i</script><script type="math/tex; mode=display">
+(-1)^n(-x)^{\overline n}=(-1)^n\sum_{i=0}^{n}s_1(n,i)x^i(-1)^i</script><script type="math/tex; mode=display">
+x^{\underline n}=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)x^i</script><p>最上面那个普通幂转第二类斯特林数和上升幂的式子也可以类似的变一下：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}</script><script type="math/tex; mode=display">
+\begin{align}(-1)^n(-x)^n&=(-1)^n\sum_{i=0}^{n}s_2(n,i)(-x)^{\underline i}\\
+(-1)^n(-x)^n&=(-1)^n\sum_{i=0}^{n}s_2(n,i)x^{\overline i}(-1)^i\\
+x^n&=\sum_{i=0}^{n}(-1)^{n-i}s_2(n,i)x^{\overline i}
+\end{align}</script><p><strong>总结一下一共四个转化的式子：</strong></p>
+<script type="math/tex; mode=display">
+\begin{align}
+x^n&=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}\\
+x^n&=\sum_{i=0}^{n}(-1)^{n-i}s_2(n,i)x^{\overline i}\\
+x^{\underline n}&=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)x^i\\
+x^{\overline n}&=\sum_{i=0}^{n}s_1(n,i)x^i
+\end{align}</script><h2 id="反转公式"><a href="#反转公式" class="headerlink" title="反转公式"></a>反转公式</h2><p>首先搬出下降幂的公式：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}</script><p>套上面的公式变成上升幂：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)(-1)^i(-x)^{\overline i}</script><p>套上升幂转第一类斯特林数的公式：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)(-1)^i\sum_{j=0}^{i}s_1(i,j)(-x)^j</script><p>把$x$的幂提前，换一下求和符号：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{j=0}^{n}x^j\sum_{i=j}^ns_2(n,i)s_1(i,j)(-1)^{i-j}</script><p>由于这里我们把$x$看成未知量，其他的都是已知量，所以我们可以把左右当作多项式，那么对比系数可得：</p>
+<script type="math/tex; mode=display">
+\sum_{i=m}^{n}s_2(n,i)s_1(i,m)(-1)^{i-m}=[m=n]</script><p>这个叫做反转公式。</p>
+<p>同理我们可以类似的得出第二个反转公式：</p>
+<script type="math/tex; mode=display">
+\sum_{i=m}^{n}s_1(n,i)s_2(i,m)(-1)^{i-m}=[m=n]</script><p><strong>注意：</strong>反转公式$-1$的指数也可以写成$n-i$，稍加分析可以发现$m=n$时成立，$m\ne n$时有两种情况，一种不变，另一种会将答案取相反数，但是由于结果为$0$所以不影响。</p>
+<h2 id="斯特林反演"><a href="#斯特林反演" class="headerlink" title="斯特林反演"></a>斯特林反演</h2><p>这里先给出反演的式子在加以证明：</p>
+<script type="math/tex; mode=display">
+f(n)=\sum_{i=0}^{n}s_2(n,i)g(i)\Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)f(i)</script><p>考虑一般反演的套路，先写出一个$[i=n]$的形式：</p>
+<script type="math/tex; mode=display">
+g(n)=\sum_{i=0}^{n}[i=n]g(i)</script><p>在把和斯特林数以及$[m=n]$的式子套进去，也就是上面的反转公式（注意$-1$的指数）：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+g(n)&=\sum_{i=0}^{n}g(i)\sum_{j=i}^{n}(-1)^{n-j}s_1(n,j)s_2(j,i)\\
+&=\sum_{j=0}^{n}(-1)^{n-j}s_1(n,j)\sum_{i=0}^{j}s_2(j,i)g(i)\\
+&=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)f(i)
+\end{align}</script><p>证毕。</p>
+<p>当然由于反转公式的对称性，所以互换$s_1,s_2$依然成立。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag"># 数论</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/05/%E6%89%A9%E5%B1%95Cayley%E5%AE%9A%E7%90%86/" rel="prev" title="扩展Cayley定理">
+      <i class="fa fa-chevron-left"></i> 扩展Cayley定理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/05/min-25%E7%AD%9B/" rel="next" title="min_25筛">
+      min_25筛 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积求第二类斯特林数"><span class="nav-number">2.</span> <span class="nav-text">卷积求第二类斯特林数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶乘幂"><span class="nav-number">3.</span> <span class="nav-text">阶乘幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶乘幂与斯特林数的转化"><span class="nav-number">4.</span> <span class="nav-text">阶乘幂与斯特林数的转化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反转公式"><span class="nav-number">5.</span> <span class="nav-text">反转公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斯特林反演"><span class="nav-number">6.</span> <span class="nav-text">斯特林反演</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hyscere"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Hyscere</p>
+  <div class="site-description" itemprop="description">Hyscere的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/impossible152090" title="Codeforces → https://codeforces.com/profile/impossible152090" rel="noopener" target="_blank"><i class="fa fa-fw fa-code"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/www.cnblogs.com/hbyer" title="www.cnblogs.com/hbyer">我的博客园链接</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hyscere</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>
