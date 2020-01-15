@@ -3737,8 +3737,8 @@ x\%10+\frac{r_{x/10}(r_{x/10}-1)}{2}-1</script><p>那么直接$dp$算答案，�
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>交互</tag>
         <tag>dp</tag>
+        <tag>交互</tag>
         <tag>倍增</tag>
         <tag>计算几何</tag>
       </tags>
@@ -3908,9 +3908,9 @@ F_1(x)=a_1a_2\cdots a_c+a_1a_2\cdots a_{c-1}+\cdots+a_1+1</script><p>这个可�
       </categories>
       <tags>
         <tag>数论</tag>
+        <tag>dp</tag>
         <tag>二分</tag>
         <tag>交互</tag>
-        <tag>dp</tag>
         <tag>FFT</tag>
         <tag>树链剖分</tag>
       </tags>
@@ -4108,8 +4108,8 @@ cnt_{d,s}=\sum_{t|s/d}\mu(t)(\frac{r}{t}-\frac{l-1}{t})</script><p>带上去算�
       </categories>
       <tags>
         <tag>莫比乌斯反演</tag>
-        <tag>交互</tag>
         <tag>计数</tag>
+        <tag>交互</tag>
         <tag>构造</tag>
         <tag>floyd</tag>
         <tag>概率期望</tag>
@@ -4318,8 +4318,8 @@ x-t\equiv -t\pmod c</script><p>那么就是说只要在让所有人一起走，�
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>交互</tag>
         <tag>dp</tag>
+        <tag>交互</tag>
         <tag>kmp</tag>
         <tag>LCT</tag>
       </tags>
