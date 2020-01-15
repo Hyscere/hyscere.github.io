@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Hyscere的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hyscere">
+<meta property="og:url" content="http://yoursite.com/page/9/index.html">
+<meta property="og:site_name" content="Hyscere">
+<meta property="og:description" content="Hyscere的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Hyscere">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://yoursite.com/page/9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Hyscere</title>
+  <meta name="generator" content="Hexo 4.2.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hyscere</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-th&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/BZOJ2694-Lcm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/12/BZOJ2694-Lcm/" class="post-title-link" itemprop="url">[BZOJ2694] Lcm</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-12 09:22:28 / 修改时间：09:33:21" itemprop="dateCreated datePublished" datetime="2019-09-12T09:22:28+08:00">2019-09-12</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>定义整数$a,b$，求所有满足一下条件的二元组$(i,j)$的$\rm lcm(i,j)$的和。</p>
+<ul>
+<li>$1\leqslant i\leqslant a,1\leqslant j\leqslant b$。</li>
+<li>$\forall n&gt;1,n^2\not \mid \gcd(i,j)$。</li>
+</ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/12/BZOJ2694-Lcm/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/CF1217F.%20Forced%20Online%20Queries%20Problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/09/CF1217F.%20Forced%20Online%20Queries%20Problem/" class="post-title-link" itemprop="url">CF1217F. Forced Online Queries Problem</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-09 13:24:09 / 修改时间：13:42:44" itemprop="dateCreated datePublished" datetime="2019-09-09T13:24:09+08:00">2019-09-09</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1217/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1217/problem/F</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>有$n$个点无向图，要进行$m$次操作，操作如下：</p>
+<ul>
+<li><code>1 x y</code>，表示修改操作，如果当前有$(x,y)$这条边就删掉，否则加上。</li>
+<li><code>2 x y</code>，询问$x,y$在不在一个联通块中。</li>
+</ul>
+<p>注意强制在线，每个参数都要改成$(x+last-1)\bmod n+1$，注意$last$为$0/1$。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/09/CF1217F.%20Forced%20Online%20Queries%20Problem/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/%E6%89%A9%E5%B1%95Cayley%E5%AE%9A%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/05/%E6%89%A9%E5%B1%95Cayley%E5%AE%9A%E7%90%86/" class="post-title-link" itemprop="url">扩展Cayley定理</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-05 15:29:03" itemprop="dateCreated datePublished" datetime="2019-09-05T15:29:03+08:00">2019-09-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-11 16:46:44" itemprop="dateModified" datetime="2019-12-11T16:46:44+08:00">2019-12-11</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这其实就是一个小结论….我做题的时候碰到的，研究了下就写了篇博客。</p>
+<p><del>（其实主要就是把wiki上一篇论文翻译简化了下）</del></p>
+<p>结论是这样的：设$n$个点$s$个连通块的有标号森林个数为$f(n,s)$，则：<br>$$<br>f(n,s)=sn^{n-s-1}<br>$$</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/05/%E6%89%A9%E5%B1%95Cayley%E5%AE%9A%E7%90%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/04/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">类欧几里得算法</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-04 12:54:58 / 修改时间：13:26:40" itemprop="dateCreated datePublished" datetime="2019-09-04T12:54:58+08:00">2019-09-04</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>做到了一个$\rm cf$题需要用到这个东西我就去学了下…</p>
+<p>以前觉得这玩意好毒瘤，不过其实也不难。</p>
+<p>类欧几里得算法一般是用来快速计算以下几个函数的（当然有其他的作用但是一般不会出现，<del>以后看到了在写吧</del>）：<br>$$<br>\begin{align<em>}<br>f(a,b,c,n)&amp;=\sum_{i=0}^{n}\lfloor\frac{ai+b}{c}\rfloor\<br>g(a,b,c,n)&amp;=\sum_{i=0}^{n}i\lfloor\frac{ai+b}{c}\rfloor\<br>h(a,b,c,n)&amp;=\sum_{i=0}^{n}\lfloor \frac{ai+b}{c}\rfloor ^2<br>\end{align</em>}<br>$$<br>其复杂度为$O(\log n)$。</p>
+<h2 id="计算F"><a href="#计算F" class="headerlink" title="计算F"></a>计算F</h2><p>我们分情况讨论，先考虑$a\geqslant c$或者$b\geqslant c$的情况。</p>
+<p>注意到根据整除的性质我们可以把式子写成这样：<br>$$<br>\begin{align<em>}<br>f(a,b,c,n)&amp;=\sum_{i=0}^{n}\left(\lfloor\frac{(a\bmod c)i+(b\bmod c)}{c}\rfloor+i\lfloor\frac{a}{c}\rfloor +\lfloor \frac{b}{c}\rfloor \right)\<br>&amp;=f(a\bmod c,b\bmod c,c,n)+\frac{n(n+1)}{2}\lfloor\frac{a}{c}\rfloor +(n+1)\lfloor \frac{b}{c}\rfloor<br>\end{align</em>}<br>$$<br>注意到这里递归了，而且递归后一定是一个$a&lt;c,b&lt;c$的情况，那么此时用上面的展开就没用了。</p>
+<p>注意到这个和式实质上是求一条直线下的整点个数，一开始我们是枚举$x$，然后算$y$，我们现在先枚举$y$，也就是横着的一条，可以得到：<br>$$<br>\begin{align<em>}<br>m&amp;=\lfloor\frac{an+b}{c}\rfloor\<br>f(a,b,c,n)&amp;=\sum_{i=0}^{n}\sum_{j=1}^{m}[\lfloor\frac{ai+b}{c}\rfloor\geqslant j]<br>\end{align</em>}<br>$$<br>推一下后面那个不等式，因为是大于等于号所以整除可以去掉：<br>$$<br>\begin{align<em>}\lfloor\frac{ai+b}{c}\rfloor&amp;\geqslant j\<br>ai+b&amp;\geqslant jc\<br>i&amp;\geqslant \frac{jc-b}{a}\<br>i&amp;&gt; \lfloor\frac{jc-b-1}{a}\rfloor\<br>\end{align</em>}<br>$$<br>那么式子就可以化简了：<br>$$<br>\begin{align<em>}<br>f(a,b,c,n)&amp;=\sum_{j=0}^{m-1}(n-\lfloor\frac{jc+c-b-1}{a}\rfloor)\<br>f(a,b,c,n)&amp;=nm-f(c,c-b-1,a,m-1)<br>\end{align</em>}<br>$$<br>观察下递归时$a,c$的变化：$(a,c)\to (a\bmod c,a)\to (a,a\bmod c)$。</p>
+<p>这就是欧几里得算法的递归过程，所以最终$a$一定会递归到$0$，此时式子可以直接计算，递归次数为$O(\log n)$。</p>
+<h2 id="计算G"><a href="#计算G" class="headerlink" title="计算G"></a>计算G</h2><p>和上面思路相同，当$a\geqslant c$或$b\geqslant c$时：<br>$$<br>g(a,b,c,n)=g(a\bmod c,b\bmod c,c,n)+<br>\frac{n(n+1)(2n+1)}{6}\lfloor\frac{a}{c}\rfloor\ + \frac{n(n+1)}{2}\lfloor \frac{b}{c}\rfloor<br>$$<br>否则：<br>$$<br>\begin{align<em>}<br>x&amp;=\lfloor\frac{jc+c-b-1}{a}\rfloor\<br>g(a,b,c,n)&amp;=\sum_{i=0}^{n}i\sum_{j=1}^{m}[\lfloor\frac{ai+b}{c}\rfloor\geqslant j]\<br>&amp;=\sum_{j=0}^{m-1}\sum_{i=x+1}^{n}i\<br>&amp;=\sum_{j=0}^{m-1}\left(\frac{n(n+1)}{2}-\frac{x^2+x}{2}\right)\<br>&amp;=\frac{1}{2}\left(mn(n+1)-h(c,c-b-1,a,m-1)-\f(c,c-b-1,a,m-1)\right)<br>\end{align</em>}<br>$$<br>其中$f$我们已经会算了，这里还用到了$h$，所以我们在推推$h$。</p>
+<h2 id="计算H"><a href="#计算H" class="headerlink" title="计算H"></a>计算H</h2><p>当$a\geqslant c$或$b\geqslant c$时，思路一样，但是式子有点复杂注意别搞错：<br>$$<br>\begin{align<em>}<br>h(a,b,c,n)&amp;=\sum_{i=0}^{n}\left(\lfloor\frac{(a\bmod c)i+(b\bmod c)}{c}\rfloor+i\lfloor\frac{a}{c}\rfloor +\lfloor \frac{b}{c}\rfloor \right)^2\<br>&amp;=h+2\lfloor\frac{a}{c}\rfloor g+2\lfloor \frac{b}{c}\rfloor f+\frac{n(n+1)(2n+1)}{6}\lfloor\frac{a}{c}\rfloor^2 +\&amp;n(n+1)\lfloor\frac{b}{c}\rfloor\lfloor\frac{a}{c}\rfloor +(n+1)\lfloor\frac{b}{c}\rfloor ^2<br>\end{align</em>}<br>$$<br>其中函数后面参数都是$(a\bmod c,b\bmod c,c,n)$，我省略没写了。</p>
+<p>第二种情况这时候就有点难算了，因为平方无法处理，这里有一个小技巧可以把平方拆开：<br>$$<br>n^2=-n+2\sum_{i=0}^{n}i<br>$$<br>那么就很简单了，一个整点$(x,y)$会被统计$y$的贡献，式子写出来就是：<br>$$<br>\begin{align<em>}<br>h(a,b,c,n)&amp;=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfloor&gt;j]\<br>&amp;=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[i&gt; \lfloor\frac{jc-b-1}{a}\rfloor]\<br>&amp;=-f(a,b,c,n)+2\sum_{j=0}^{m-1}(j+1)(n-\lfloor\frac{jc+c-b-1}{a}\rfloor)\<br>&amp;=m(m+1)n-2g(c,c-b-1,a,m-1)\&amp;-2f(c,c-b-1,a,m-1)-f(a,b,c,n)<br>\end{align</em>}<br>$$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果按照上面写三个函数互相调用显然是不优的，因为一个状态有可能被算很多次，当然可以采取记忆化，但是这样会多一个查找的$\log $。</p>
+<p>有一个小技巧就是，我们可以写一个$\rm dfs$，返回三个值，分别是$f,g,h$，注意到这三个函数递归的时候参数都是一样的，所以这样只会递归$O(\log n)$次，并且每次递归都是$O(1)$算。</p>
+<p>所以总复杂度$O(\log n)$。</p>
+<p>代码长这样：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inv2 = <span class="number">499122177</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inv6 = <span class="number">166374059</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">data</span> &#123;</span><span class="keyword">int</span> f,g,h;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">data <span class="title">calc</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c,<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    data ans;</span><br><span class="line">    <span class="keyword">int</span> s1=<span class="number">1l</span>l*n*(n+<span class="number">1</span>)%mod*inv2%mod,s2=<span class="number">1l</span>l*n*(n+<span class="number">1</span>)%mod*(n*<span class="number">2</span>+<span class="number">1</span>)%mod*inv6%mod;</span><br><span class="line">    <span class="keyword">if</span>(!a) &#123;</span><br><span class="line">        ans.f=<span class="number">1l</span>l*(n+<span class="number">1</span>)*(b/c)%mod;</span><br><span class="line">        ans.g=<span class="number">1l</span>l*s1*(b/c)%mod;</span><br><span class="line">        ans.h=<span class="number">1l</span>l*(b/c)*(b/c)%mod*(n+<span class="number">1</span>)%mod;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(a&gt;=c||b&gt;=c) &#123;</span><br><span class="line">        data res=calc(a%c,b%c,c,n);</span><br><span class="line">        ans.f=(<span class="number">0l</span>l+res.f+<span class="number">1l</span>l*s1*(a/c)%mod+<span class="number">1l</span>l*(n+<span class="number">1</span>)*(b/c)%mod)%mod;</span><br><span class="line">        ans.g=(<span class="number">0l</span>l+res.g+<span class="number">1l</span>l*s2*(a/c)%mod+<span class="number">1l</span>l*s1*(b/c)%mod)%mod;</span><br><span class="line">        ans.h=(<span class="number">0l</span>l+res.h+<span class="number">1l</span>l*(a/c)*res.g*<span class="number">2</span>%mod+<span class="number">1l</span>l*(b/c)*res.f*<span class="number">2</span>%mod)%mod;</span><br><span class="line">        ans.h=(<span class="number">0l</span>l+ans.h+<span class="number">1l</span>l*s2*(a/c)%mod*(a/c)%mod+<span class="number">1l</span>l*n*(n+<span class="number">1</span>)%mod*(b/c)%mod*(a/c)%mod)%mod;</span><br><span class="line">        ans.h=(ans.h+<span class="number">1l</span>l*(n+<span class="number">1</span>)*(b/c)%mod*(b/c)%mod)%mod;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;<span class="keyword">int</span> m=(<span class="number">1l</span>l*a*n+b)/c;</span><br><span class="line">    data res=calc(c,c-b<span class="number">-1</span>,a,m<span class="number">-1</span>);</span><br><span class="line">    ans.f=(<span class="number">1l</span>l*m*n%mod-res.f+mod)%mod;</span><br><span class="line">    ans.g=(<span class="number">1l</span>l*m*n%mod*(n+<span class="number">1</span>)%mod-res.h-res.f)%mod;ans.g=(<span class="number">1l</span>l*ans.g*inv2%mod+mod)%mod;</span><br><span class="line">    ans.h=(<span class="number">0l</span>l+<span class="number">1l</span>l*m*n%mod*(m+<span class="number">1</span>)%mod<span class="number">-2l</span>l*res.g<span class="number">-2l</span>l*res.f-ans.f)%mod;ans.h=(ans.h+mod)%mod;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;read(t);</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c,n;read(n),read(a),read(b),read(c);</span><br><span class="line">        data ans=calc(a,b,c,n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,ans.f,ans.h,ans.g);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来很复杂其实就是对着式子抄了一遍，提交至洛谷模板可$\rm AC$。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/8/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Hyscere">
+  <p class="site-author-name" itemprop="name">Hyscere</p>
+  <div class="site-description" itemprop="description">Hyscere的博客</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/%20%7C%7C%20th">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/impossible152090" title="Codeforces &amp;rarr; https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;impossible152090" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-code&quot;&gt;&lt;&#x2F;i&gt;Codeforces</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/www.cnblogs.com/hbyer" title="www.cnblogs.com&#x2F;hbyer">我的博客园链接</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hyscere</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0.js"></script>
+
+<script src="/js/motion.js?v=7.3.0.js"></script>
+
+
+<script src="/js/schemes/pisces.js?v=7.3.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.3.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>
