@@ -4247,8 +4247,8 @@ f_i=\max_{j=1}^{i-1}\{f_j+(x_i-x_j)\cdot y_i-a_i\}</script><p>这显然可以斜
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>dp</tag>
         <tag>分块</tag>
+        <tag>dp</tag>
         <tag>线段树</tag>
         <tag>计数</tag>
         <tag>斜率优化</tag>
