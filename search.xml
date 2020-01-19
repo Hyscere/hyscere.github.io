@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>「BZOJ4833」最小公倍佩尔数</title>
+    <url>/2020/01/19/%E3%80%8CBZOJ4833%E3%80%8D%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E4%BD%A9%E5%B0%94%E6%95%B0/</url>
+    <content><![CDATA[<p>题目链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4833" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4833</a>。</p>
+<p>巧妙的构造</p>
+<a id="more"></a>
+<p>首先根据特征根或者打表可以知道：</p>
+<script type="math/tex; mode=display">
+f_n=
+\begin{cases}
+0&n=0\\
+1&n=1\\
+2f_{n-1}+f_{n-2}&{\rm otherwise}
+\end{cases}</script><p>那么这个东西的性质其实和斐波那契数列是一样的，所以很容易得到：</p>
+<script type="math/tex; mode=display">
+\gcd(f_i,f_j)=f_{\gcd(i,j)}</script><p>有一个$\rm min-max$容斥的拓展是这样的：</p>
+<script type="math/tex; mode=display">
+{\rm lcm} (S)=\prod_{T\subseteq S,T\ne \phi}\gcd(T)^{(-1)^{|T|-1}}</script><p>考虑每个质因数就可以知道这个东西和$\rm min-max$容斥等价。</p>
+<p>那么容易得到：</p>
+<script type="math/tex; mode=display">
+g(i)=\prod_{T\subseteq S}f(\gcd(T))^{(-1)^{|T|-1}}</script><p>很容易想到枚举$\gcd$的答案然后套莫比乌斯反演，但是这样很不好搞。</p>
+<p>注意到这样的瓶颈是，如果我们枚举答案，那么我们就要算$\gcd$恰好等于$x$的贡献，如果我们能通过一种方法搞成，$x|\gcd$的集合都有贡献就好搞了，考虑构造：</p>
+<script type="math/tex; mode=display">
+f_i=\prod_{d|i}h_d</script><p>显然$h$可以很快的算出来的，因为我们知道$f$，所以$g$可以写成：</p>
+<script type="math/tex; mode=display">
+g(i)=\prod_{d=1}^{i}h_d^{\sum_{T\subseteq S,T\ne \phi}[d|\gcd(T)](-1)^{|T|-1}}</script><p>注意到假设我们硬点一个$d$的倍数$x$，那么其他$d$的倍数的子集$s$和$s\cup x$会两两抵消，所以指数最后会剩下个$1$，那么：</p>
+<script type="math/tex; mode=display">
+g(i)=\prod_{d=1}^{i}h_d</script><p>复杂度$O(n\log n)$。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>{</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);}</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> data asd09123jdf02i3h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,mod,f[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;x;x&gt;&gt;=<span class="number">1</span>,a=<span class="number">1l</span>l*a*a%mod) <span class="keyword">if</span>(x&amp;<span class="number">1</span>) res=<span class="number">1l</span>l*res*a%mod;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>{</span><br><span class="line">    read(n),read(mod);</span><br><span class="line">    f[<span class="number">0</span>]=<span class="number">0</span>,f[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++) f[i]=(<span class="number">2l</span>l*f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>])%mod;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) {</span><br><span class="line">        <span class="keyword">int</span> t=qpow(f[i],mod<span class="number">-2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+i;j&lt;=n;j+=i)</span><br><span class="line">            f[j]=<span class="number">1l</span>l*f[j]*t%mod;</span><br><span class="line">    }</span><br><span class="line">    f[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) f[i]=<span class="number">1l</span>l*f[i<span class="number">-1</span>]*f[i]%mod;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) ans=(ans+<span class="number">1l</span>l*f[i]*i%mod)%mod;</span><br><span class="line">    write(ans);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> t;read(t);</span><br><span class="line">    <span class="keyword">while</span>(t--) solve();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>容斥</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「CF1288F」Red-Blue Graph</title>
     <url>/2020/01/18/%E3%80%8CCF1288F%E3%80%8DRed-Blue-Graph/</url>
     <content><![CDATA[<p>题目链接：<a href="https://codeforces.com/contest/1288/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1288/problem/F</a>。</p>
@@ -1328,8 +1383,8 @@ f_n=\sum_{i=0}^{n}(-1)^i\binom{n}{i}^22^ii!(2n-2i)!</script><p>这样就可以�
       <tags>
         <tag>dp</tag>
         <tag>计数</tag>
-        <tag>生成函数</tag>
         <tag>容斥</tag>
+        <tag>生成函数</tag>
       </tags>
   </entry>
   <entry>
@@ -2929,8 +2984,8 @@ g(s)=\sum_{t\subseteq s}(-1)^{|s|-|t|}f(t)</script><p>那么利用$\rm FWT$预�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>FWT</tag>
         <tag>容斥</tag>
+        <tag>FWT</tag>
       </tags>
   </entry>
   <entry>
