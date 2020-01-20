@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>「BZOJ5483」Balanced Beam</title>
+    <url>/2020/01/20/%E3%80%8CBZOJ5483%E3%80%8DBalanced-Beam/</url>
+    <content><![CDATA[<p>题目链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=5483" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=5483</a>。</p>
+<a id="more"></a>
+<p>首先假设$f_i$表示从$i$出发最优策略下的期望最大值，那么根据定义可以写出式子：</p>
+<script type="math/tex; mode=display">
+f_i=\max(a_i,\frac{f_{i-1}+f_{i+1}}{2})</script><p>显然最后$f$肯定都是确定了的，也就是说，对于一个点$i$，你每次到这个点都一定会选择动或者不动，这个决策是根据这个点来的。</p>
+<p>所以假设你当前要算$x$的答案，并且最靠近$x$的决策为不动的点为$l,r$，那么显然$(l,r)$都会选择动，也就是说式子就是：</p>
+<script type="math/tex; mode=display">
+f_i=\frac{f_{i+1}+f_{i-1}}{2}</script><p>显然这是个等差数列的形式，如果我们把$(i,a_i)$看作平面上的点，显然所有的$f$值都在凸包上。</p>
+<p>复杂度$O(n)$，注意这题有点卡精度。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>{</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);}</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> data asd09123jdf02i3h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,a[maxn],top;</span><br><span class="line">pii sta[maxn];</span><br><span class="line"></span><br><span class="line">pii <span class="keyword">operator</span> - (pii a,pii b) {<span class="keyword">return</span> mp(a.fr-b.fr,a.sc-b.sc);}</span><br><span class="line">ll <span class="keyword">operator</span> * (pii a,pii b) {<span class="keyword">return</span> <span class="number">1l</span>l*a.fr*b.sc-a.sc*b.fr;}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) read(a[i]),a[i]*=<span class="number">1e5</span>; <span class="comment">// 这样可以保证精度</span></span><br><span class="line">    sta[++top]=mp(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n+<span class="number">1</span>;i++) {</span><br><span class="line">        pii x=mp(i,a[i]);</span><br><span class="line">        <span class="keyword">while</span>(top&gt;<span class="number">1</span>&amp;&amp;(x-sta[top<span class="number">-1</span>])*(sta[top]-sta[top<span class="number">-1</span>])&lt;<span class="number">0</span>) top--;</span><br><span class="line">        sta[++top]=x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,p=<span class="number">1</span>;i&lt;=n;i++) {</span><br><span class="line">        <span class="keyword">while</span>(sta[p+<span class="number">1</span>].fr&lt;=i) p++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,(ll)(sta[p].sc+<span class="number">1.0</span>*(sta[p+<span class="number">1</span>].sc-sta[p].sc)*(i-sta[p].fr)/(sta[p+<span class="number">1</span>].fr-sta[p].fr)));</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>概率期望</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「BZOJ4833」最小公倍佩尔数</title>
     <url>/2020/01/19/%E3%80%8CBZOJ4833%E3%80%8D%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E4%BD%A9%E5%B0%94%E6%95%B0/</url>
     <content><![CDATA[<p>题目链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4833" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4833</a>。</p>
@@ -3523,10 +3562,10 @@ f(a,b,c)&=c/a+1+\sum_{i=0}^{c/a}\lfloor\frac{ai+c\bmod a}{b}\rfloor
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>二分</tag>
         <tag>构造</tag>
         <tag>类欧几里得</tag>
         <tag>贪心</tag>
+        <tag>二分</tag>
       </tags>
   </entry>
   <entry>
@@ -4160,6 +4199,83 @@ F_1(x)=a_1a_2\cdots a_c+a_1a_2\cdots a_{c-1}+\cdots+a_1+1</script><p>这个可�
       </tags>
   </entry>
   <entry>
+    <title>FFT(MTT)常数优化</title>
+    <url>/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>最近<del>闲着无聊</del>研究了下$FFT$的常数优化，大概就是各种$3$次变$2or1.5$次之类的，<del>不过没见过啥题卡这个的吧</del>。</p>
+<p>关于$FFT$可以看这里：<a href="https://www.cnblogs.com/hbyer/p/10325916.html" target="_blank" rel="noopener">浅谈FFT&amp;NTT</a>。</p>
+<a id="more"></a>
+<h2 id="关于复数"><a href="#关于复数" class="headerlink" title="关于复数"></a>关于复数</h2><p>设$x=a+bi$，其中$i$是虚数单位，那么我们用$\bar x$表示$x$的共轭复数，即$\bar x=a-bi$。</p>
+<p>共轭复数有一个这样的性质：</p>
+<script type="math/tex; mode=display">
+\overline{ab}=\bar a \cdot \bar b</script><p>证明展开就好了，这个是下面优化的关键。</p>
+<p>设$\omega_n$为$n$阶单位根，则$\overline{\omega _n^{x}}=\omega_{n}^{-x}$。</p>
+<h2 id="idft变dft"><a href="#idft变dft" class="headerlink" title="idft变dft"></a>idft变dft</h2><p>设$f(x)=\sum_{i=0}^{n-1}a_ix^i$，注意到：</p>
+<script type="math/tex; mode=display">
+n\cdot[j]{\rm idft}(f)=\sum_{i=0}^{n-1}\omega_{n}^{-ij}a_i=a_0+\sum_{i=1}^{n-1}\omega_{n}^{ij}a_{n-i}</script><p>也就是说我们如果先<code>dft(a)</code>，再进行一次<code>std::reverse(a+1,a+n)</code>，再除以$n$，就完成了一次$idft$。</p>
+<h2 id="多项式乘法优化-1"><a href="#多项式乘法优化-1" class="headerlink" title="多项式乘法优化 1"></a>多项式乘法优化 1</h2><p>给出多项式$f(x)=\sum_{i=0}^{n}a_ix^i,g(x)=\sum_{i=0}^{m}b_ix^i$，求其卷积。</p>
+<p>这里最开始介绍一种非常简洁的优化方法，构造多项式$h(x)$：</p>
+<script type="math/tex; mode=display">
+h(x)=f(x)+ig(x)</script><script type="math/tex; mode=display">
+h^2(x)=f^2(x)-g^2(x)+2if(x)g(x)</script><p>那么我们只需要取$h^2(x)$的虚部除以$2$就是答案，这只需要做两次$FFT$。</p>
+<h2 id="多项式乘法优化-2"><a href="#多项式乘法优化-2" class="headerlink" title="多项式乘法优化 2"></a>多项式乘法优化 2</h2><p>这个和上面的关联不大，设$X_i$表示多项式$F(x)$$dft$之后的系数，$a_i$表示$dft$之前的系数，设$F(x)$为$n$项的多项式，且$n=2^k$，注意到：</p>
+<script type="math/tex; mode=display">
+X_i=\sum_{j=0}^{n-1}a_j\omega_{n}^{ij},X_{n-i}=\sum_{j=0}^{n-1}a_j\omega_{n}^{-ij}</script><p>即：$X_i=\overline{X_{n-i}}$。</p>
+<p>这实质上是因为$F$没有虚部的原因，我们换一个有虚部的多项式试试：</p>
+<script type="math/tex; mode=display">
+X_i=\sum_{j=0}^{n-1}(a_j+ib_j)\omega_{n}^{ij}\\
+X_{n-i}=\sum_{j=0}^{n-1}(a_j+ib_j)\omega_{n}^{-ij}\\
+\overline{X_{n-i}}=\sum_{j=0}^{n-1}(a_j-ib_j)\omega_{n}^{ij}\\</script><p>等等，我们发现第一个式子和第三个式子很像，两式相加减可以得到：</p>
+<script type="math/tex; mode=display">
+X_i+\overline{X_{n-i}}=2\sum_{j=0}^{n-1}a_j\omega_{n}^{ij}\\
+X_i-\overline{X_{n-i}}=2i\sum_{j=0}^{n-1}b_j\omega_{n}^{ij}</script><p>注意到等式右边就是$a$ $dft$完之后的结果，那么对于多项式$F(x),G(x)$，我们可以构造一个函数然后$dft$一次，然后$O(n)$得到两个多项式$dft$之后的结果，总共只用了一次$FFT$。</p>
+<hr>
+<p>当然这个玩意也可以这样用：假设我们现在想求$dft(F(x))$，我们把$F(x)$奇偶分类，构造多项式：</p>
+<script type="math/tex; mode=display">
+g(x)=\sum_{i=0}^{n/2-1}(a_{2i}+ia_{2i+1})x^i</script><p>然后相当于是$0.5$次$FFT$来完成这个事，设$dft(g(x))$每一项为$X_i$，$dft(F(x))$每一项为$Y_i$，那么推一下可以得到：</p>
+<script type="math/tex; mode=display">
+Y_i=\frac{X_i+\overline{X_{n/2-i}}}{2}-2\omega_{n}^i(X_i-\overline{X_{n/2-i}})</script><p>注意这里只有$i\in [0,n/2)$的值，$Y_{n/2}$特殊处理一下，后面的可以通过前面得到。</p>
+<h2 id="MTT常数优化"><a href="#MTT常数优化" class="headerlink" title="MTT常数优化"></a>MTT常数优化</h2><p>$\rm MTT$就是拆系数$\rm FFT$，设多项式$s(x),t(x)$，我们要算$s(x)t(x)$，模数任意。</p>
+<p>我们拆系数，设拆完了之后是$s(x)=a(x)+b(x)\cdot p,t(x)=c(x)+d(x)\cdot p$。</p>
+<p>构造$F(x)=a(x)+i\cdot b(x)$，$G(x)=c(x)+i\cdot d(x)$。</p>
+<p>那么有：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&F(\omega_n^j)=\sum_{i=0}^{n-1}(a_i+ib_i)\omega_n^{ij}\\
+&F(\omega_n^{-j})=\sum_{i=0}^{n-1}(a_i+ib_i)\omega_n^{-ij}\\
+&\overline{F(\omega_n^{-j})}=\sum_{i=0}^{n-1}(a_i-ib_i)\omega_n^{ij}\\
+\end{align}</script><p>那么相加减可得$a(x),b(x)$的$dft$。</p>
+<p>令$h(x)={\rm dft}(a(x))\cdot {\rm dft}(G(x))={\rm dft}(a(x)\cdot G(x))={\rm dft}(a(x)c(x)+i\cdot a(x)d(x))$。</p>
+<p>那么我们$idft$一次$h(x)$就可以得到$a(x)c(x),a(x)d(x)$。</p>
+<p>同理可以得到$b(x)c(x),b(x)d(x)$，一共$4$次$dft$。</p>
+<p>代码长这样：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(<span class="keyword">int</span> *r,<span class="keyword">int</span> *s,<span class="keyword">int</span> *t,<span class="keyword">int</span> len)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span>(N=<span class="number">1</span>,bit=<span class="number">0</span>;N&lt;len;N&lt;&lt;=<span class="number">1</span>,bit++);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) pos[i]=pos[i&gt;&gt;<span class="number">1</span>]&gt;&gt;<span class="number">1</span>|((i&amp;<span class="number">1</span>)&lt;&lt;(bit<span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) g[<span class="number">0</span>][i]=cp(r[i]&amp;all,r[i]&gt;&gt;<span class="number">15</span>),g[<span class="number">1</span>][i]=cp(s[i]&amp;all,s[i]&gt;&gt;<span class="number">15</span>);</span><br><span class="line">    fft(g[<span class="number">0</span>]),fft(g[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) {</span><br><span class="line">        <span class="keyword">int</span> j=(N-i)&amp;(N<span class="number">-1</span>);</span><br><span class="line">        g[<span class="number">2</span>][j]=(g[<span class="number">0</span>][i]+conj(g[<span class="number">0</span>][j]))*cp(<span class="number">0.5</span>,<span class="number">0</span>)*g[<span class="number">1</span>][i];</span><br><span class="line">        g[<span class="number">3</span>][j]=(g[<span class="number">0</span>][i]-conj(g[<span class="number">0</span>][j]))*cp(<span class="number">0</span>,<span class="number">-0.5</span>)*g[<span class="number">1</span>][i];</span><br><span class="line">    }fft(g[<span class="number">2</span>]),fft(g[<span class="number">3</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) g[<span class="number">2</span>][i]=g[<span class="number">2</span>][i]/N,g[<span class="number">3</span>][i]=g[<span class="number">3</span>][i]/N;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) {</span><br><span class="line">        ll pp=g[<span class="number">2</span>][i].r+<span class="number">0.5</span>,x=g[<span class="number">2</span>][i].i+<span class="number">0.5</span>,y=g[<span class="number">3</span>][i].r+<span class="number">0.5</span>,z=g[<span class="number">3</span>][i].i+<span class="number">0.5</span>;</span><br><span class="line">        t[i]=(pp%p+(((x+y)%p)&lt;&lt;<span class="number">15</span>)+((z%p)&lt;&lt;<span class="number">30</span>))%p;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>FFT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Codeforces Round 580 (Div. 1)</title>
     <url>/2019/09/03/Codeforces%20Round%20580%20(Div.%201)/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/contest/1205" target="_blank" rel="noopener">https://codeforces.com/contest/1205</a></p>
@@ -4239,88 +4355,11 @@ cnt_{d,s}=\sum_{t|s/d}\mu(t)(\frac{r}{t}-\frac{l-1}{t})</script><p>带上去算�
       </categories>
       <tags>
         <tag>莫比乌斯反演</tag>
-        <tag>交互</tag>
         <tag>构造</tag>
+        <tag>交互</tag>
         <tag>计数</tag>
         <tag>floyd</tag>
         <tag>概率期望</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FFT(MTT)常数优化</title>
-    <url>/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>最近<del>闲着无聊</del>研究了下$FFT$的常数优化，大概就是各种$3$次变$2or1.5$次之类的，<del>不过没见过啥题卡这个的吧</del>。</p>
-<p>关于$FFT$可以看这里：<a href="https://www.cnblogs.com/hbyer/p/10325916.html" target="_blank" rel="noopener">浅谈FFT&amp;NTT</a>。</p>
-<a id="more"></a>
-<h2 id="关于复数"><a href="#关于复数" class="headerlink" title="关于复数"></a>关于复数</h2><p>设$x=a+bi$，其中$i$是虚数单位，那么我们用$\bar x$表示$x$的共轭复数，即$\bar x=a-bi$。</p>
-<p>共轭复数有一个这样的性质：</p>
-<script type="math/tex; mode=display">
-\overline{ab}=\bar a \cdot \bar b</script><p>证明展开就好了，这个是下面优化的关键。</p>
-<p>设$\omega_n$为$n$阶单位根，则$\overline{\omega _n^{x}}=\omega_{n}^{-x}$。</p>
-<h2 id="idft变dft"><a href="#idft变dft" class="headerlink" title="idft变dft"></a>idft变dft</h2><p>设$f(x)=\sum_{i=0}^{n-1}a_ix^i$，注意到：</p>
-<script type="math/tex; mode=display">
-n\cdot[j]{\rm idft}(f)=\sum_{i=0}^{n-1}\omega_{n}^{-ij}a_i=a_0+\sum_{i=1}^{n-1}\omega_{n}^{ij}a_{n-i}</script><p>也就是说我们如果先<code>dft(a)</code>，再进行一次<code>std::reverse(a+1,a+n)</code>，再除以$n$，就完成了一次$idft$。</p>
-<h2 id="多项式乘法优化-1"><a href="#多项式乘法优化-1" class="headerlink" title="多项式乘法优化 1"></a>多项式乘法优化 1</h2><p>给出多项式$f(x)=\sum_{i=0}^{n}a_ix^i,g(x)=\sum_{i=0}^{m}b_ix^i$，求其卷积。</p>
-<p>这里最开始介绍一种非常简洁的优化方法，构造多项式$h(x)$：</p>
-<script type="math/tex; mode=display">
-h(x)=f(x)+ig(x)</script><script type="math/tex; mode=display">
-h^2(x)=f^2(x)-g^2(x)+2if(x)g(x)</script><p>那么我们只需要取$h^2(x)$的虚部除以$2$就是答案，这只需要做两次$FFT$。</p>
-<h2 id="多项式乘法优化-2"><a href="#多项式乘法优化-2" class="headerlink" title="多项式乘法优化 2"></a>多项式乘法优化 2</h2><p>这个和上面的关联不大，设$X_i$表示多项式$F(x)$$dft$之后的系数，$a_i$表示$dft$之前的系数，设$F(x)$为$n$项的多项式，且$n=2^k$，注意到：</p>
-<script type="math/tex; mode=display">
-X_i=\sum_{j=0}^{n-1}a_j\omega_{n}^{ij},X_{n-i}=\sum_{j=0}^{n-1}a_j\omega_{n}^{-ij}</script><p>即：$X_i=\overline{X_{n-i}}$。</p>
-<p>这实质上是因为$F$没有虚部的原因，我们换一个有虚部的多项式试试：</p>
-<script type="math/tex; mode=display">
-X_i=\sum_{j=0}^{n-1}(a_j+ib_j)\omega_{n}^{ij}\\
-X_{n-i}=\sum_{j=0}^{n-1}(a_j+ib_j)\omega_{n}^{-ij}\\
-\overline{X_{n-i}}=\sum_{j=0}^{n-1}(a_j-ib_j)\omega_{n}^{ij}\\</script><p>等等，我们发现第一个式子和第三个式子很像，两式相加减可以得到：</p>
-<script type="math/tex; mode=display">
-X_i+\overline{X_{n-i}}=2\sum_{j=0}^{n-1}a_j\omega_{n}^{ij}\\
-X_i-\overline{X_{n-i}}=2i\sum_{j=0}^{n-1}b_j\omega_{n}^{ij}</script><p>注意到等式右边就是$a$ $dft$完之后的结果，那么对于多项式$F(x),G(x)$，我们可以构造一个函数然后$dft$一次，然后$O(n)$得到两个多项式$dft$之后的结果，总共只用了一次$FFT$。</p>
-<hr>
-<p>当然这个玩意也可以这样用：假设我们现在想求$dft(F(x))$，我们把$F(x)$奇偶分类，构造多项式：</p>
-<script type="math/tex; mode=display">
-g(x)=\sum_{i=0}^{n/2-1}(a_{2i}+ia_{2i+1})x^i</script><p>然后相当于是$0.5$次$FFT$来完成这个事，设$dft(g(x))$每一项为$X_i$，$dft(F(x))$每一项为$Y_i$，那么推一下可以得到：</p>
-<script type="math/tex; mode=display">
-Y_i=\frac{X_i+\overline{X_{n/2-i}}}{2}-2\omega_{n}^i(X_i-\overline{X_{n/2-i}})</script><p>注意这里只有$i\in [0,n/2)$的值，$Y_{n/2}$特殊处理一下，后面的可以通过前面得到。</p>
-<h2 id="MTT常数优化"><a href="#MTT常数优化" class="headerlink" title="MTT常数优化"></a>MTT常数优化</h2><p>$\rm MTT$就是拆系数$\rm FFT$，设多项式$s(x),t(x)$，我们要算$s(x)t(x)$，模数任意。</p>
-<p>我们拆系数，设拆完了之后是$s(x)=a(x)+b(x)\cdot p,t(x)=c(x)+d(x)\cdot p$。</p>
-<p>构造$F(x)=a(x)+i\cdot b(x)$，$G(x)=c(x)+i\cdot d(x)$。</p>
-<p>那么有：</p>
-<script type="math/tex; mode=display">
-\begin{align}
-&F(\omega_n^j)=\sum_{i=0}^{n-1}(a_i+ib_i)\omega_n^{ij}\\
-&F(\omega_n^{-j})=\sum_{i=0}^{n-1}(a_i+ib_i)\omega_n^{-ij}\\
-&\overline{F(\omega_n^{-j})}=\sum_{i=0}^{n-1}(a_i-ib_i)\omega_n^{ij}\\
-\end{align}</script><p>那么相加减可得$a(x),b(x)$的$dft$。</p>
-<p>令$h(x)={\rm dft}(a(x))\cdot {\rm dft}(G(x))={\rm dft}(a(x)\cdot G(x))={\rm dft}(a(x)c(x)+i\cdot a(x)d(x))$。</p>
-<p>那么我们$idft$一次$h(x)$就可以得到$a(x)c(x),a(x)d(x)$。</p>
-<p>同理可以得到$b(x)c(x),b(x)d(x)$，一共$4$次$dft$。</p>
-<p>代码长这样：</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(<span class="keyword">int</span> *r,<span class="keyword">int</span> *s,<span class="keyword">int</span> *t,<span class="keyword">int</span> len)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span>(N=<span class="number">1</span>,bit=<span class="number">0</span>;N&lt;len;N&lt;&lt;=<span class="number">1</span>,bit++);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) pos[i]=pos[i&gt;&gt;<span class="number">1</span>]&gt;&gt;<span class="number">1</span>|((i&amp;<span class="number">1</span>)&lt;&lt;(bit<span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) g[<span class="number">0</span>][i]=cp(r[i]&amp;all,r[i]&gt;&gt;<span class="number">15</span>),g[<span class="number">1</span>][i]=cp(s[i]&amp;all,s[i]&gt;&gt;<span class="number">15</span>);</span><br><span class="line">    fft(g[<span class="number">0</span>]),fft(g[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) {</span><br><span class="line">        <span class="keyword">int</span> j=(N-i)&amp;(N<span class="number">-1</span>);</span><br><span class="line">        g[<span class="number">2</span>][j]=(g[<span class="number">0</span>][i]+conj(g[<span class="number">0</span>][j]))*cp(<span class="number">0.5</span>,<span class="number">0</span>)*g[<span class="number">1</span>][i];</span><br><span class="line">        g[<span class="number">3</span>][j]=(g[<span class="number">0</span>][i]-conj(g[<span class="number">0</span>][j]))*cp(<span class="number">0</span>,<span class="number">-0.5</span>)*g[<span class="number">1</span>][i];</span><br><span class="line">    }fft(g[<span class="number">2</span>]),fft(g[<span class="number">3</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) g[<span class="number">2</span>][i]=g[<span class="number">2</span>][i]/N,g[<span class="number">3</span>][i]=g[<span class="number">3</span>][i]/N;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) {</span><br><span class="line">        ll pp=g[<span class="number">2</span>][i].r+<span class="number">0.5</span>,x=g[<span class="number">2</span>][i].i+<span class="number">0.5</span>,y=g[<span class="number">3</span>][i].r+<span class="number">0.5</span>,z=g[<span class="number">3</span>][i].i+<span class="number">0.5</span>;</span><br><span class="line">        t[i]=(pp%p+(((x+y)%p)&lt;&lt;<span class="number">15</span>)+((z%p)&lt;&lt;<span class="number">30</span>))%p;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>FFT</tag>
       </tags>
   </entry>
   <entry>

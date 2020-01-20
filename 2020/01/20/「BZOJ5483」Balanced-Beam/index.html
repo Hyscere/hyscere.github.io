@@ -46,20 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="引入关于斯特林数的定义可以上百度搜…这部分很简单就没写了。 本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。 这里不加说明的给出递推式：  \begin{align}s_1(n,k)&amp;&#x3D;(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\ s_2(n,k)&amp;&#x3D;k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}卷积">
+  <meta name="description" content="题目链接：https:&#x2F;&#x2F;www.lydsy.com&#x2F;JudgeOnline&#x2F;problem.php?id&#x3D;5483。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="斯特林反演">
-<meta property="og:url" content="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/index.html">
+<meta property="og:title" content="「BZOJ5483」Balanced Beam">
+<meta property="og:url" content="http://yoursite.com/2020/01/20/%E3%80%8CBZOJ5483%E3%80%8DBalanced-Beam/index.html">
 <meta property="og:site_name" content="Hyscere">
-<meta property="og:description" content="引入关于斯特林数的定义可以上百度搜…这部分很简单就没写了。 本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。 这里不加说明的给出递推式：  \begin{align}s_1(n,k)&amp;&#x3D;(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\ s_2(n,k)&amp;&#x3D;k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}卷积">
+<meta property="og:description" content="题目链接：https:&#x2F;&#x2F;www.lydsy.com&#x2F;JudgeOnline&#x2F;problem.php?id&#x3D;5483。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-09-05T11:22:10.000Z">
-<meta property="article:modified_time" content="2020-01-15T08:28:06.711Z">
+<meta property="article:published_time" content="2020-01-20T01:49:25.000Z">
+<meta property="article:modified_time" content="2020-01-20T01:56:37.940Z">
 <meta property="article:author" content="Hyscere">
-<meta property="article:tag" content="数论">
+<meta property="article:tag" content="概率期望">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/">
+<link rel="canonical" href="http://yoursite.com/2020/01/20/%E3%80%8CBZOJ5483%E3%80%8DBalanced-Beam/">
 
 
 <script id="page-configurations">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>斯特林反演 | Hyscere</title>
+  <title>「BZOJ5483」Balanced Beam | Hyscere</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/20/%E3%80%8CBZOJ5483%E3%80%8DBalanced-Beam/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          斯特林反演
+          「BZOJ5483」Balanced Beam
         </h1>
 
         <div class="post-meta">
@@ -223,24 +223,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-09-05 19:22:10" itemprop="dateCreated datePublished" datetime="2019-09-05T19:22:10+08:00">2019-09-05</time>
+              <time title="创建时间：2020-01-20 09:49:25 / 修改时间：09:56:37" itemprop="dateCreated datePublished" datetime="2020-01-20T09:49:25+08:00">2020-01-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-15 16:28:06" itemprop="dateModified" datetime="2020-01-15T16:28:06+08:00">2020-01-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
                   </a>
                 </span>
             </span>
@@ -263,86 +257,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <a id="more"></a>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>关于斯特林数的定义可以上百度搜…这部分很简单就没写了。</p>
-<p>本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。</p>
-<p>这里不加说明的给出递推式：</p>
+        <p>题目链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=5483" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=5483</a>。</p>
+<a id="more"></a>
+<p>首先假设$f_i$表示从$i$出发最优策略下的期望最大值，那么根据定义可以写出式子：</p>
 <script type="math/tex; mode=display">
-\begin{align}s_1(n,k)&=(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\
-s_2(n,k)&=k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}</script><h2 id="卷积求第二类斯特林数"><a href="#卷积求第二类斯特林数" class="headerlink" title="卷积求第二类斯特林数"></a>卷积求第二类斯特林数</h2><p>首先有一个组合意义很明显的式子：</p>
+f_i=\max(a_i,\frac{f_{i-1}+f_{i+1}}{2})</script><p>显然最后$f$肯定都是确定了的，也就是说，对于一个点$i$，你每次到这个点都一定会选择动或者不动，这个决策是根据这个点来的。</p>
+<p>所以假设你当前要算$x$的答案，并且最靠近$x$的决策为不动的点为$l,r$，那么显然$(l,r)$都会选择动，也就是说式子就是：</p>
 <script type="math/tex; mode=display">
-n^k=\sum_{i=0}^{k}s_2(k,i)\binom{n}{i}i!</script><p>就是说$k$个位置填$n$种颜色，我们可以分成若干组，每组颜色不同。</p>
-<p>我们可以把后面的值为$0$的项补全：</p>
-<script type="math/tex; mode=display">
-n^k=\sum_{i=0}^{n}s_2(k,i)\binom{n}{i}i!</script><p>对其进行二项式反演：</p>
-<script type="math/tex; mode=display">
-s_2(k,n)n!=\sum_{i=0}^{n}(-1)^{n-i}\binom{n}{i}i^k</script><p>这个可以写成卷积形式，顺便把变量换下：</p>
-<script type="math/tex; mode=display">
-s_2(n,k)=\sum_{i=0}^k\frac{(-1)^{k-i}}{(k-i)!}\cdot \frac{i^n}{i!}</script><h2 id="阶乘幂"><a href="#阶乘幂" class="headerlink" title="阶乘幂"></a>阶乘幂</h2><p>阶乘幂的定义是这样的：</p>
-<p>上升幂：$x^{\overline n}=\prod_{i=1}^{n}(x+i-1)$。</p>
-<p>下降幂：$x^{\underline n}=\prod_{i=1}^{n}(x-i+1)$。</p>
-<p>显然可以根据组合数的定义得到：</p>
-<script type="math/tex; mode=display">
-x^{\underline n}=\binom{x}{n}n!</script><p>还有两个这样的式子：</p>
-<script type="math/tex; mode=display">
-x^{\overline n}=(-1)^n(-x)^{\underline n}\\
-x^{\underline n}=(-1)^n(-x)^{\overline n}</script><p>把右边拆开就能证明了。</p>
-<h2 id="阶乘幂与斯特林数的转化"><a href="#阶乘幂与斯特林数的转化" class="headerlink" title="阶乘幂与斯特林数的转化"></a>阶乘幂与斯特林数的转化</h2><p>所以上面卷积的第一个式子可以写成这样：</p>
-<script type="math/tex; mode=display">
-n^k=\sum_{i=0}^{k}s_2(k,i)\binom{n}{i}i!=\sum_{i=0}^{k}s_2(k,i)n^{\underline i}</script><p>还有一个<strong>第一类斯特林数和上升幂的关系</strong>：</p>
-<script type="math/tex; mode=display">
-x^{\overline n}=\sum_{i=0}^{n}s_1(n,i)x^i</script><p>可以通过数学归纳来证明：</p>
-<script type="math/tex; mode=display">
-\begin{align}
-x^{\overline {n}}&=(x+n-1)\sum_{i=0}^{n-1}s_1(n-1,i)x^i\\
-&=\sum_{i=0}^{n-1}s_1(n-1,i)x^{i+1}+\sum_{i=0}^{n-1}(n-1)\cdot s_1(n-1,i)x^i\\
-&=\sum_{i=1}^{n}s_1(n-1,i-1)x^{i}+\sum_{i=1}^{n-1}(n-1)\cdot s_1(n-1,i)x^i\\
-&=\sum_{i=1}^{n}\big(s_1(n-1,i-1)+(n-1)s_1(n-1,i)\big)x^{i}\\
-&=\sum_{i=0}^{n}s_1(n,i)x^i
-\end{align}</script><p>注意由于$s_1(n,0)=s_1(n,n+1)=0$，所以中间边界条件其实不需要在意。</p>
-<p>我们把这个式子变一下可以得到一个<strong>第一类斯特林数和下降幂的关系</strong>：</p>
-<script type="math/tex; mode=display">
-x^{\overline n}=\sum_{i=0}^{n}s_1(n,i)x^i</script><script type="math/tex; mode=display">
-(-1)^n(-x)^{\overline n}=(-1)^n\sum_{i=0}^{n}s_1(n,i)x^i(-1)^i</script><script type="math/tex; mode=display">
-x^{\underline n}=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)x^i</script><p>最上面那个普通幂转第二类斯特林数和上升幂的式子也可以类似的变一下：</p>
-<script type="math/tex; mode=display">
-x^n=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}</script><script type="math/tex; mode=display">
-\begin{align}(-1)^n(-x)^n&=(-1)^n\sum_{i=0}^{n}s_2(n,i)(-x)^{\underline i}\\
-(-1)^n(-x)^n&=(-1)^n\sum_{i=0}^{n}s_2(n,i)x^{\overline i}(-1)^i\\
-x^n&=\sum_{i=0}^{n}(-1)^{n-i}s_2(n,i)x^{\overline i}
-\end{align}</script><p><strong>总结一下一共四个转化的式子：</strong></p>
-<script type="math/tex; mode=display">
-\begin{align}
-x^n&=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}\\
-x^n&=\sum_{i=0}^{n}(-1)^{n-i}s_2(n,i)x^{\overline i}\\
-x^{\underline n}&=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)x^i\\
-x^{\overline n}&=\sum_{i=0}^{n}s_1(n,i)x^i
-\end{align}</script><h2 id="反转公式"><a href="#反转公式" class="headerlink" title="反转公式"></a>反转公式</h2><p>首先搬出下降幂的公式：</p>
-<script type="math/tex; mode=display">
-x^n=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}</script><p>套上面的公式变成上升幂：</p>
-<script type="math/tex; mode=display">
-x^n=\sum_{i=0}^{n}s_2(n,i)(-1)^i(-x)^{\overline i}</script><p>套上升幂转第一类斯特林数的公式：</p>
-<script type="math/tex; mode=display">
-x^n=\sum_{i=0}^{n}s_2(n,i)(-1)^i\sum_{j=0}^{i}s_1(i,j)(-x)^j</script><p>把$x$的幂提前，换一下求和符号：</p>
-<script type="math/tex; mode=display">
-x^n=\sum_{j=0}^{n}x^j\sum_{i=j}^ns_2(n,i)s_1(i,j)(-1)^{i-j}</script><p>由于这里我们把$x$看成未知量，其他的都是已知量，所以我们可以把左右当作多项式，那么对比系数可得：</p>
-<script type="math/tex; mode=display">
-\sum_{i=m}^{n}s_2(n,i)s_1(i,m)(-1)^{i-m}=[m=n]</script><p>这个叫做反转公式。</p>
-<p>同理我们可以类似的得出第二个反转公式：</p>
-<script type="math/tex; mode=display">
-\sum_{i=m}^{n}s_1(n,i)s_2(i,m)(-1)^{i-m}=[m=n]</script><p><strong>注意：</strong>反转公式$-1$的指数也可以写成$n-i$，稍加分析可以发现$m=n$时成立，$m\ne n$时有两种情况，一种不变，另一种会将答案取相反数，但是由于结果为$0$所以不影响。</p>
-<h2 id="斯特林反演"><a href="#斯特林反演" class="headerlink" title="斯特林反演"></a>斯特林反演</h2><p>这里先给出反演的式子在加以证明：</p>
-<script type="math/tex; mode=display">
-f(n)=\sum_{i=0}^{n}s_2(n,i)g(i)\Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)f(i)</script><p>考虑一般反演的套路，先写出一个$[i=n]$的形式：</p>
-<script type="math/tex; mode=display">
-g(n)=\sum_{i=0}^{n}[i=n]g(i)</script><p>在把和斯特林数以及$[m=n]$的式子套进去，也就是上面的反转公式（注意$-1$的指数）：</p>
-<script type="math/tex; mode=display">
-\begin{align}
-g(n)&=\sum_{i=0}^{n}g(i)\sum_{j=i}^{n}(-1)^{n-j}s_1(n,j)s_2(j,i)\\
-&=\sum_{j=0}^{n}(-1)^{n-j}s_1(n,j)\sum_{i=0}^{j}s_2(j,i)g(i)\\
-&=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)f(i)
-\end{align}</script><p>证毕。</p>
-<p>当然由于反转公式的对称性，所以互换$s_1,s_2$依然成立。</p>
+f_i=\frac{f_{i+1}+f_{i-1}}{2}</script><p>显然这是个等差数列的形式，如果我们把$(i,a_i)$看作平面上的点，显然所有的$f$值都在凸包上。</p>
+<p>复杂度$O(n)$，注意这题有点卡精度。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>{</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);}</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> data asd09123jdf02i3h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,a[maxn],top;</span><br><span class="line">pii sta[maxn];</span><br><span class="line"></span><br><span class="line">pii <span class="keyword">operator</span> - (pii a,pii b) {<span class="keyword">return</span> mp(a.fr-b.fr,a.sc-b.sc);}</span><br><span class="line">ll <span class="keyword">operator</span> * (pii a,pii b) {<span class="keyword">return</span> <span class="number">1l</span>l*a.fr*b.sc-a.sc*b.fr;}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) read(a[i]),a[i]*=<span class="number">1e5</span>; <span class="comment">// 这样可以保证精度</span></span><br><span class="line">    sta[++top]=mp(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n+<span class="number">1</span>;i++) {</span><br><span class="line">        pii x=mp(i,a[i]);</span><br><span class="line">        <span class="keyword">while</span>(top&gt;<span class="number">1</span>&amp;&amp;(x-sta[top<span class="number">-1</span>])*(sta[top]-sta[top<span class="number">-1</span>])&lt;<span class="number">0</span>) top--;</span><br><span class="line">        sta[++top]=x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,p=<span class="number">1</span>;i&lt;=n;i++) {</span><br><span class="line">        <span class="keyword">while</span>(sta[p+<span class="number">1</span>].fr&lt;=i) p++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,(ll)(sta[p].sc+<span class="number">1.0</span>*(sta[p+<span class="number">1</span>].sc-sta[p].sc)*(i-sta[p].fr)/(sta[p+<span class="number">1</span>].fr-sta[p].fr)));</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -370,7 +294,7 @@ g(n)&=\sum_{i=0}^{n}g(i)\sum_{j=i}^{n}(-1)^{n-j}s_1(n,j)s_2(j,i)\\
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag"># 数论</a>
+              <a href="/tags/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" rel="tag"># 概率期望</a>
           </div>
 
         
@@ -379,13 +303,10 @@ g(n)&=\sum_{i=0}^{n}g(i)\sum_{j=i}^{n}(-1)^{n-j}s_1(n,j)s_2(j,i)\\
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/09/05/%E6%89%A9%E5%B1%95Cayley%E5%AE%9A%E7%90%86/" rel="prev" title="扩展Cayley定理">
-      <i class="fa fa-chevron-left"></i> 扩展Cayley定理
+    <a href="/2020/01/19/%E3%80%8CBZOJ4833%E3%80%8D%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E4%BD%A9%E5%B0%94%E6%95%B0/" rel="prev" title="「BZOJ4833」最小公倍佩尔数">
+      <i class="fa fa-chevron-left"></i> 「BZOJ4833」最小公倍佩尔数
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/09/05/min-25%E7%AD%9B/" rel="next" title="min_25筛">
-      min_25筛 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -445,7 +366,6 @@ g(n)&=\sum_{i=0}^{n}g(i)\sum_{j=i}^{n}(-1)^{n-j}s_1(n,j)s_2(j,i)\\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积求第二类斯特林数"><span class="nav-number">2.</span> <span class="nav-text">卷积求第二类斯特林数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶乘幂"><span class="nav-number">3.</span> <span class="nav-text">阶乘幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶乘幂与斯特林数的转化"><span class="nav-number">4.</span> <span class="nav-text">阶乘幂与斯特林数的转化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反转公式"><span class="nav-number">5.</span> <span class="nav-text">反转公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斯特林反演"><span class="nav-number">6.</span> <span class="nav-text">斯特林反演</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
