@@ -7,7 +7,7 @@
 <a id="more"></a>
 <p>显然答案就是：</p>
 <script type="math/tex; mode=display">
-\sum_{i=1}^{n}\sum_{j=i+1}^{n}\binom{a_i+a_j+b_i+b_j}{a_i+a_j}</script><p>可以很简答的把下标变一下：</p>
+\sum_{i=1}^{n}\sum_{j=i+1}^{n}\binom{a_i+a_j+b_i+b_j}{a_i+a_j}</script><p>可以很简单的把下标变一下：</p>
 <script type="math/tex; mode=display">
 \sum_{i=1}^{n}\sum_{j=1}^{n}\binom{a_i+a_j+b_i+b_j}{a_i+a_j}</script><p>得到这个答案在处理一下即可。</p>
 <p>考虑这个东西的组合意义，组合数有一个意义就是说路径的方案数，我们把它看成平面上的点$(a_i,b_i)$，对于每个点建一个对称的点$(-a_i,-b_i)$，那么上面那个组合数就是$(-a_i,-b_i)$到$(a_j,b_j)$的方案数。</p>
@@ -1462,8 +1462,8 @@ f_n=\sum_{i=0}^{n}(-1)^i\binom{n}{i}^22^ii!(2n-2i)!</script><p>这样就可以�
       <tags>
         <tag>dp</tag>
         <tag>计数</tag>
-        <tag>生成函数</tag>
         <tag>容斥</tag>
+        <tag>生成函数</tag>
       </tags>
   </entry>
   <entry>
@@ -3063,8 +3063,8 @@ g(s)=\sum_{t\subseteq s}(-1)^{|s|-|t|}f(t)</script><p>那么利用$\rm FWT$预�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>FWT</tag>
         <tag>容斥</tag>
+        <tag>FWT</tag>
       </tags>
   </entry>
   <entry>
@@ -3947,8 +3947,8 @@ x\%10+\frac{r_{x/10}(r_{x/10}-1)}{2}-1</script><p>那么直接$dp$算答案，�
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>交互</tag>
         <tag>dp</tag>
+        <tag>交互</tag>
         <tag>倍增</tag>
         <tag>计算几何</tag>
       </tags>
@@ -4118,9 +4118,9 @@ F_1(x)=a_1a_2\cdots a_c+a_1a_2\cdots a_{c-1}+\cdots+a_1+1</script><p>这个可�
       </categories>
       <tags>
         <tag>数论</tag>
+        <tag>dp</tag>
         <tag>二分</tag>
         <tag>交互</tag>
-        <tag>dp</tag>
         <tag>FFT</tag>
         <tag>树链剖分</tag>
       </tags>
@@ -4318,8 +4318,8 @@ cnt_{d,s}=\sum_{t|s/d}\mu(t)(\frac{r}{t}-\frac{l-1}{t})</script><p>带上去算�
       </categories>
       <tags>
         <tag>莫比乌斯反演</tag>
-        <tag>交互</tag>
         <tag>计数</tag>
+        <tag>交互</tag>
         <tag>构造</tag>
         <tag>floyd</tag>
         <tag>概率期望</tag>
@@ -4457,11 +4457,11 @@ f_i=\max_{j=1}^{i-1}\{f_j+(x_i-x_j)\cdot y_i-a_i\}</script><p>这显然可以斜
         <category>codeforces</category>
       </categories>
       <tags>
+        <tag>分块</tag>
         <tag>dp</tag>
         <tag>线段树</tag>
         <tag>计数</tag>
         <tag>斜率优化</tag>
-        <tag>分块</tag>
       </tags>
   </entry>
   <entry>
@@ -4528,8 +4528,8 @@ x-t\equiv -t\pmod c</script><p>那么就是说只要在让所有人一起走，�
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>交互</tag>
         <tag>dp</tag>
+        <tag>交互</tag>
         <tag>kmp</tag>
         <tag>LCT</tag>
       </tags>
