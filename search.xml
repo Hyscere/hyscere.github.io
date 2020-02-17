@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>「CF1301F」Super Jaber</title>
+    <url>/2020/02/17/%E3%80%8CCF1301F%E3%80%8DSuper-Jaber/</url>
+    <content><![CDATA[<p>题目链接：<a href="https://codeforces.com/contest/1301/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1301/problem/F</a>。</p>
+<a id="more"></a>
+<p>首先最短路有可能不用同色的路，这样距离就是曼哈顿距离，否则一定至少有一条这样的路。</p>
+<p>我们枚举颜色$x$，那么这种情况答案就是：起点到任意一个$x$颜色点的最短距离+终点最短距离+1。</p>
+<p>这样一来我们只需要处理出$f_{i,j,x}$表示从$(i,j)$出发到任意一个$x$颜色点的最短距离即可。</p>
+<p>因为最短路边权都为$1$，直接$\rm bfs$即可，注意$\rm bfs$的时候每种颜色的边只需要第一次到的时候遍历一遍即可。</p>
+<p>复杂度$O(nmk+qk)$。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>{</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);}</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> data asd09123jdf02i3h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e3</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c[maxn][maxn],f[maxn][maxn][<span class="number">51</span>],n,m,k;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dx[] = {<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>};</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dy[] = {<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>{<span class="keyword">return</span> x&gt;<span class="number">0</span>&amp;&amp;x&lt;=n&amp;&amp;y&gt;<span class="number">0</span>&amp;&amp;y&lt;=m;}</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;pii &gt; w[<span class="number">41</span>];</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">41</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    read(n),read(m),read(k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++) read(c[i][j]),w[c[i][j]].pb(mp(i,j));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;=k;x++) {</span><br><span class="line">        <span class="built_in">queue</span>&lt;pii &gt; q;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++) vis[i]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">                <span class="keyword">if</span>(c[i][j]==x) q.push(mp(i,j));</span><br><span class="line">                <span class="keyword">else</span> f[i][j][x]=inf;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty()) {</span><br><span class="line">            <span class="keyword">int</span> xx=q.front().fr,y=q.front().sc;q.pop();</span><br><span class="line">            <span class="keyword">if</span>(!vis[c[xx][y]]) {</span><br><span class="line">                vis[c[xx][y]]=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">auto</span> t:w[c[xx][y]])</span><br><span class="line">                    <span class="keyword">if</span>(f[t.fr][t.sc][x]==inf) </span><br><span class="line">                        q.push(t),f[t.fr][t.sc][x]=f[xx][y][x]+<span class="number">1</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> u,v,i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">                <span class="keyword">if</span>(check(u=xx+dx[i],v=y+dy[i])&amp;&amp;f[u][v][x]==inf)</span><br><span class="line">                    f[u][v][x]=f[xx][y][x]+<span class="number">1</span>,q.push(mp(u,v));</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> q;read(q);</span><br><span class="line">    <span class="keyword">while</span>(q--) {</span><br><span class="line">        <span class="keyword">int</span> a,b,c,d;read(a),read(b),read(c),read(d);</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="built_in">abs</span>(d-b)+<span class="built_in">abs</span>(a-c);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++) ans=min(ans,f[a][b][i]+f[c][d][i]+<span class="number">1</span>);</span><br><span class="line">        write(ans);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+  </entry>
+  <entry>
     <title>「CF1299C」Water Balance</title>
     <url>/2020/02/13/%E3%80%8CCF1299C%E3%80%8DWater-Balance/</url>
     <content><![CDATA[<p>题目链接：<a href="https://codeforces.com/contest/1299/problem/C" target="_blank" rel="noopener">https://codeforces.com/contest/1299/problem/C</a>。</p>
@@ -3272,9 +3306,9 @@ g_{n,k}=g_{n,k-1}-g_{n-1,k-1}</script><p>边界是$g_{n,0}=n!$。</p>
         <category>codeforces</category>
       </categories>
       <tags>
+        <tag>构造</tag>
         <tag>线段树</tag>
         <tag>计数</tag>
-        <tag>构造</tag>
         <tag>搜索</tag>
       </tags>
   </entry>
@@ -3323,9 +3357,9 @@ g_{n,k}=g_{n,k-1}-g_{n-1,k-1}</script><p>边界是$g_{n,0}=n!$。</p>
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>计数</tag>
         <tag>构造</tag>
         <tag>贪心</tag>
+        <tag>计数</tag>
         <tag>图论</tag>
       </tags>
   </entry>
@@ -4367,8 +4401,8 @@ cnt_{d,s}=\sum_{t|s/d}\mu(t)(\frac{r}{t}-\frac{l-1}{t})</script><p>带上去算�
       <tags>
         <tag>莫比乌斯反演</tag>
         <tag>交互</tag>
-        <tag>计数</tag>
         <tag>构造</tag>
+        <tag>计数</tag>
         <tag>floyd</tag>
         <tag>概率期望</tag>
       </tags>
