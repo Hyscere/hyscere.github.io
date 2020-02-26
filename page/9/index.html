@@ -198,6 +198,179 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/%E6%96%AF%E7%89%B9%E6%9E%97%E5%8F%8D%E6%BC%94/" class="post-title-link" itemprop="url">斯特林反演</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-05 19:22:10" itemprop="dateCreated datePublished" datetime="2019-09-05T19:22:10+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 16:28:06" itemprop="dateModified" datetime="2020-01-15T16:28:06+08:00">2020-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>关于斯特林数的定义可以上百度搜…这部分很简单就没写了。</p>
+<p>本文中，$s_1(n,k)$表示第一类斯特林数，$s_2(n,k)$表示第二类。</p>
+<p>这里不加说明的给出递推式：</p>
+<script type="math/tex; mode=display">
+\begin{align}s_1(n,k)&=(n-1)\cdot s_1(n-1,k)+s_1(n-1,k-1)\\
+s_2(n,k)&=k\cdot s_2(n-1,k)+s_2(n-1,k-1)\end{align}</script><h2 id="卷积求第二类斯特林数"><a href="#卷积求第二类斯特林数" class="headerlink" title="卷积求第二类斯特林数"></a>卷积求第二类斯特林数</h2><p>首先有一个组合意义很明显的式子：</p>
+<script type="math/tex; mode=display">
+n^k=\sum_{i=0}^{k}s_2(k,i)\binom{n}{i}i!</script><p>就是说$k$个位置填$n$种颜色，我们可以分成若干组，每组颜色不同。</p>
+<p>我们可以把后面的值为$0$的项补全：</p>
+<script type="math/tex; mode=display">
+n^k=\sum_{i=0}^{n}s_2(k,i)\binom{n}{i}i!</script><p>对其进行二项式反演：</p>
+<script type="math/tex; mode=display">
+s_2(k,n)n!=\sum_{i=0}^{n}(-1)^{n-i}\binom{n}{i}i^k</script><p>这个可以写成卷积形式，顺便把变量换下：</p>
+<script type="math/tex; mode=display">
+s_2(n,k)=\sum_{i=0}^k\frac{(-1)^{k-i}}{(k-i)!}\cdot \frac{i^n}{i!}</script><h2 id="阶乘幂"><a href="#阶乘幂" class="headerlink" title="阶乘幂"></a>阶乘幂</h2><p>阶乘幂的定义是这样的：</p>
+<p>上升幂：$x^{\overline n}=\prod_{i=1}^{n}(x+i-1)$。</p>
+<p>下降幂：$x^{\underline n}=\prod_{i=1}^{n}(x-i+1)$。</p>
+<p>显然可以根据组合数的定义得到：</p>
+<script type="math/tex; mode=display">
+x^{\underline n}=\binom{x}{n}n!</script><p>还有两个这样的式子：</p>
+<script type="math/tex; mode=display">
+x^{\overline n}=(-1)^n(-x)^{\underline n}\\
+x^{\underline n}=(-1)^n(-x)^{\overline n}</script><p>把右边拆开就能证明了。</p>
+<h2 id="阶乘幂与斯特林数的转化"><a href="#阶乘幂与斯特林数的转化" class="headerlink" title="阶乘幂与斯特林数的转化"></a>阶乘幂与斯特林数的转化</h2><p>所以上面卷积的第一个式子可以写成这样：</p>
+<script type="math/tex; mode=display">
+n^k=\sum_{i=0}^{k}s_2(k,i)\binom{n}{i}i!=\sum_{i=0}^{k}s_2(k,i)n^{\underline i}</script><p>还有一个<strong>第一类斯特林数和上升幂的关系</strong>：</p>
+<script type="math/tex; mode=display">
+x^{\overline n}=\sum_{i=0}^{n}s_1(n,i)x^i</script><p>可以通过数学归纳来证明：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+x^{\overline {n}}&=(x+n-1)\sum_{i=0}^{n-1}s_1(n-1,i)x^i\\
+&=\sum_{i=0}^{n-1}s_1(n-1,i)x^{i+1}+\sum_{i=0}^{n-1}(n-1)\cdot s_1(n-1,i)x^i\\
+&=\sum_{i=1}^{n}s_1(n-1,i-1)x^{i}+\sum_{i=1}^{n-1}(n-1)\cdot s_1(n-1,i)x^i\\
+&=\sum_{i=1}^{n}\big(s_1(n-1,i-1)+(n-1)s_1(n-1,i)\big)x^{i}\\
+&=\sum_{i=0}^{n}s_1(n,i)x^i
+\end{align}</script><p>注意由于$s_1(n,0)=s_1(n,n+1)=0$，所以中间边界条件其实不需要在意。</p>
+<p>我们把这个式子变一下可以得到一个<strong>第一类斯特林数和下降幂的关系</strong>：</p>
+<script type="math/tex; mode=display">
+x^{\overline n}=\sum_{i=0}^{n}s_1(n,i)x^i</script><script type="math/tex; mode=display">
+(-1)^n(-x)^{\overline n}=(-1)^n\sum_{i=0}^{n}s_1(n,i)x^i(-1)^i</script><script type="math/tex; mode=display">
+x^{\underline n}=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)x^i</script><p>最上面那个普通幂转第二类斯特林数和上升幂的式子也可以类似的变一下：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}</script><script type="math/tex; mode=display">
+\begin{align}(-1)^n(-x)^n&=(-1)^n\sum_{i=0}^{n}s_2(n,i)(-x)^{\underline i}\\
+(-1)^n(-x)^n&=(-1)^n\sum_{i=0}^{n}s_2(n,i)x^{\overline i}(-1)^i\\
+x^n&=\sum_{i=0}^{n}(-1)^{n-i}s_2(n,i)x^{\overline i}
+\end{align}</script><p><strong>总结一下一共四个转化的式子：</strong></p>
+<script type="math/tex; mode=display">
+\begin{align}
+x^n&=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}\\
+x^n&=\sum_{i=0}^{n}(-1)^{n-i}s_2(n,i)x^{\overline i}\\
+x^{\underline n}&=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)x^i\\
+x^{\overline n}&=\sum_{i=0}^{n}s_1(n,i)x^i
+\end{align}</script><h2 id="反转公式"><a href="#反转公式" class="headerlink" title="反转公式"></a>反转公式</h2><p>首先搬出下降幂的公式：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)x^{\underline i}</script><p>套上面的公式变成上升幂：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)(-1)^i(-x)^{\overline i}</script><p>套上升幂转第一类斯特林数的公式：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{i=0}^{n}s_2(n,i)(-1)^i\sum_{j=0}^{i}s_1(i,j)(-x)^j</script><p>把$x$的幂提前，换一下求和符号：</p>
+<script type="math/tex; mode=display">
+x^n=\sum_{j=0}^{n}x^j\sum_{i=j}^ns_2(n,i)s_1(i,j)(-1)^{i-j}</script><p>由于这里我们把$x$看成未知量，其他的都是已知量，所以我们可以把左右当作多项式，那么对比系数可得：</p>
+<script type="math/tex; mode=display">
+\sum_{i=m}^{n}s_2(n,i)s_1(i,m)(-1)^{i-m}=[m=n]</script><p>这个叫做反转公式。</p>
+<p>同理我们可以类似的得出第二个反转公式：</p>
+<script type="math/tex; mode=display">
+\sum_{i=m}^{n}s_1(n,i)s_2(i,m)(-1)^{i-m}=[m=n]</script><p><strong>注意：</strong>反转公式$-1$的指数也可以写成$n-i$，稍加分析可以发现$m=n$时成立，$m\ne n$时有两种情况，一种不变，另一种会将答案取相反数，但是由于结果为$0$所以不影响。</p>
+<h2 id="斯特林反演"><a href="#斯特林反演" class="headerlink" title="斯特林反演"></a>斯特林反演</h2><p>这里先给出反演的式子在加以证明：</p>
+<script type="math/tex; mode=display">
+f(n)=\sum_{i=0}^{n}s_2(n,i)g(i)\Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)f(i)</script><p>考虑一般反演的套路，先写出一个$[i=n]$的形式：</p>
+<script type="math/tex; mode=display">
+g(n)=\sum_{i=0}^{n}[i=n]g(i)</script><p>在把和斯特林数以及$[m=n]$的式子套进去，也就是上面的反转公式（注意$-1$的指数）：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+g(n)&=\sum_{i=0}^{n}g(i)\sum_{j=i}^{n}(-1)^{n-j}s_1(n,j)s_2(j,i)\\
+&=\sum_{j=0}^{n}(-1)^{n-j}s_1(n,j)\sum_{i=0}^{j}s_2(j,i)g(i)\\
+&=\sum_{i=0}^{n}(-1)^{n-i}s_1(n,i)f(i)
+\end{align}</script><p>证毕。</p>
+<p>当然由于反转公式的对称性，所以互换$s_1,s_2$依然成立。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/%E6%89%A9%E5%B1%95Cayley%E5%AE%9A%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -688,6 +861,89 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/" class="post-title-link" itemprop="url">Codeforces Round 576 (Div. 1)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-03 19:22:31" itemprop="dateCreated datePublished" datetime="2019-09-03T19:22:31+08:00">2019-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-15 16:28:53" itemprop="dateModified" datetime="2020-01-15T16:28:53+08:00">2020-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1199" target="_blank" rel="noopener">https://codeforces.com/contest/1199</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -855,89 +1111,6 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Hyscere">
-      <meta itemprop="description" content="Hyscere的博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hyscere">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/" class="post-title-link" itemprop="url">Codeforces Round 576 (Div. 1)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-03 19:22:31" itemprop="dateCreated datePublished" datetime="2019-09-03T19:22:31+08:00">2019-09-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-15 16:28:53" itemprop="dateModified" datetime="2020-01-15T16:28:53+08:00">2020-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/codeforces/" itemprop="url" rel="index">
-                    <span itemprop="name">codeforces</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://codeforces.com/contest/1199" target="_blank" rel="noopener">https://codeforces.com/contest/1199</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/Codeforces%20Round%20526%20(Div.%201)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1017,94 +1190,11 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/Codeforces%20Round%20545%20(Div.%201)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Hyscere">
-      <meta itemprop="description" content="Hyscere的博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hyscere">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/01/Codeforces%20Round%20545%20(Div.%201)/" class="post-title-link" itemprop="url">Codeforces Round 545 (Div. 1)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-01 19:22:31" itemprop="dateCreated datePublished" datetime="2019-09-01T19:22:31+08:00">2019-09-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-15 16:29:17" itemprop="dateModified" datetime="2020-01-15T16:29:17+08:00">2020-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/codeforces/" itemprop="url" rel="index">
-                    <span itemprop="name">codeforces</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://codeforces.com/contest/1137" target="_blank" rel="noopener">https://codeforces.com/contest/1137</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/01/Codeforces%20Round%20545%20(Div.%201)/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1172,7 +1262,7 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
