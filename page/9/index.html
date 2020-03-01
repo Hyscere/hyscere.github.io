@@ -198,6 +198,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/CF1217F.%20Forced%20Online%20Queries%20Problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/09/CF1217F.%20Forced%20Online%20Queries%20Problem/" class="post-title-link" itemprop="url">CF1217F. Forced Online Queries Problem</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-09-09 13:24:09 / 修改时间：13:42:44" itemprop="dateCreated datePublished" datetime="2019-09-09T13:24:09+08:00">2019-09-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://codeforces.com/contest/1217/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1217/problem/F</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>有$n$个点无向图，要进行$m$次操作，操作如下：</p>
+<ul>
+<li><code>1 x y</code>，表示修改操作，如果当前有$(x,y)$这条边就删掉，否则加上。</li>
+<li><code>2 x y</code>，询问$x,y$在不在一个联通块中。</li>
+</ul>
+<p>注意强制在线，每个参数都要改成$(x+last-1)\bmod n+1$，注意$last$为$0/1$。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/09/CF1217F.%20Forced%20Online%20Queries%20Problem/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/min-25%E7%AD%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -947,90 +1030,6 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Hyscere">
-      <meta itemprop="description" content="Hyscere的博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hyscere">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">FFT(MTT)常数优化</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-03 19:22:31" itemprop="dateCreated datePublished" datetime="2019-09-03T19:22:31+08:00">2019-09-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-15 16:28:39" itemprop="dateModified" datetime="2020-01-15T16:28:39+08:00">2020-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近<del>闲着无聊</del>研究了下$FFT$的常数优化，大概就是各种$3$次变$2or1.5$次之类的，<del>不过没见过啥题卡这个的吧</del>。</p>
-<p>关于$FFT$可以看这里：<a href="https://www.cnblogs.com/hbyer/p/10325916.html" target="_blank" rel="noopener">浅谈FFT&amp;NTT</a>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Codeforces%20Round%20576%20(Div.%201)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1114,7 +1113,7 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Codeforces%20Round%20580%20(Div.%201)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -1128,7 +1127,7 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/03/Codeforces%20Round%20580%20(Div.%201)/" class="post-title-link" itemprop="url">Codeforces Round 580 (Div. 1)</a>
+            <a href="/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">FFT(MTT)常数优化</a>
         </h1>
 
         <div class="post-meta">
@@ -1145,7 +1144,7 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-15 16:28:46" itemprop="dateModified" datetime="2020-01-15T16:28:46+08:00">2020-01-15</time>
+                <time title="修改时间：2020-01-15 16:28:39" itemprop="dateModified" datetime="2020-01-15T16:28:39+08:00">2020-01-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1153,8 +1152,8 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/codeforces/" itemprop="url" rel="index">
-                    <span itemprop="name">codeforces</span>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
             </span>
@@ -1170,10 +1169,11 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://codeforces.com/contest/1205" target="_blank" rel="noopener">https://codeforces.com/contest/1205</a></p>
+          <p>最近<del>闲着无聊</del>研究了下$FFT$的常数优化，大概就是各种$3$次变$2or1.5$次之类的，<del>不过没见过啥题卡这个的吧</del>。</p>
+<p>关于$FFT$可以看这里：<a href="https://www.cnblogs.com/hbyer/p/10325916.html" target="_blank" rel="noopener">浅谈FFT&amp;NTT</a>。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/03/Codeforces%20Round%20580%20(Div.%201)/#more" rel="contents">
+              <a class="btn" href="/2019/09/03/FFT(MTT)%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1265,7 +1265,7 @@ h(a,b,c,n)&=-f(a,b,c,n)+2\sum_{i=0}^{n}\sum_{j=1}^{m}j[\lfloor\frac{ai+b}{c}\rfl
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-count">93</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
