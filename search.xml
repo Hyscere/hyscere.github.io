@@ -16,7 +16,7 @@
 <p><a href="https://loj.ac/submission/780228" target="_blank" rel="noopener">code</a>。</p>
 <h3 id="「USACO-2020-2-Platinum」Equilateral-Triangles"><a href="#「USACO-2020-2-Platinum」Equilateral-Triangles" class="headerlink" title="「USACO 2020.2 Platinum」Equilateral Triangles"></a>「USACO 2020.2 Platinum」Equilateral Triangles</h3><p>显然我们可以找到一个点，使得它到三角形三点相等。</p>
 <p>这个点必然是这样的：</p>
-<p><img src="/.com//Users\Administrator\Desktop\blog\hexo\source\_posts\最近的做题记录\1.png" alt></p>
+<p><img src="/.com//最近的做题记录\1.png" style="zoom:150%;"></p>
 <p>而且 $x=y=z$ ，画画图就能知道了。</p>
 <p>所以我们枚举 $O$ 点，枚举 $x$ 的长度，然后统计有多少个 $C$ 点合法即可，可以用前缀和优化（斜着统计前缀和），复杂度 $O(n^3)$ 。</p>
 <p>注意特判一下 $C,O,A(B)$ 共线的情况，这种情况可能会算重复。</p>
