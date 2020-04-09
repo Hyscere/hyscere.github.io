@@ -55,7 +55,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/04/03/FzSOkv5odKZ6nJD.png">
 <meta property="article:published_time" content="2020-04-03T13:38:18.000Z">
-<meta property="article:modified_time" content="2020-04-07T10:46:05.183Z">
+<meta property="article:modified_time" content="2020-04-09T02:00:36.675Z">
 <meta property="article:author" content="Hyscere">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/04/03/FzSOkv5odKZ6nJD.png">
@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-07 18:46:05" itemprop="dateModified" datetime="2020-04-07T18:46:05+08:00">2020-04-07</time>
+                <time title="修改时间：2020-04-09 10:00:36" itemprop="dateModified" datetime="2020-04-09T10:00:36+08:00">2020-04-09</time>
               </span>
 
           
@@ -266,7 +266,7 @@
 <p><a href="https://loj.ac/submission/780228" target="_blank" rel="noopener">code</a>。</p>
 <h3 id="「USACO-2020-2-Platinum」Equilateral-Triangles"><a href="#「USACO-2020-2-Platinum」Equilateral-Triangles" class="headerlink" title="「USACO 2020.2 Platinum」Equilateral Triangles"></a>「USACO 2020.2 Platinum」Equilateral Triangles</h3><p>显然我们可以找到一个点，使得它到三角形三点相等。</p>
 <p>这个点必然是这样的：</p>
-<p><img src="https://i.loli.net/2020/04/03/FzSOkv5odKZ6nJD.png" alt></p>
+<p><img src="https://i.loli.net/2020/04/03/FzSOkv5odKZ6nJD.png" alt=""></p>
 <p>而且 $x=y=z$ ，画画图就能知道了（也有可能是旋转了若干个 $90^\circ$ ）。</p>
 <p>所以我们枚举 $O$ 点，枚举 $x$ 的长度，枚举四种情况，然后统计有多少个 $C$ 点合法即可，可以用前缀和优化（斜着统计前缀和），复杂度 $O(n^3)$ 。</p>
 <p>注意特判一下 $C,O,A(B)$ 共线的情况，这种情况可能会算重复。</p>
@@ -293,6 +293,40 @@
 <p>否则 $fa_x$ 会继续连向他的父亲，这样建出来的图可能会忽略掉一些较大的答案，但最小的一定能找到。</p>
 <p>复杂度 $O(n)$ （而且这个代码目前是 $\rm loj$ 跑的最快的）。</p>
 <p><a href="https://loj.ac/submission/782719" target="_blank" rel="noopener">code</a>。</p>
+<h2 id="4-8"><a href="#4-8" class="headerlink" title="4.8"></a>4.8</h2><h3 id="「JOISC-2020-Day2」变色龙之恋"><a href="#「JOISC-2020-Day2」变色龙之恋" class="headerlink" title="「JOISC 2020 Day2」变色龙之恋"></a>「JOISC 2020 Day2」变色龙之恋</h3><p>考虑点 $p$ 和谁参加会议只会得到一种颜色，假设 $x$ 可以，那么我们连边 $p,x$。</p>
+<p>可能的情况有：他喜欢的人 $x$ ，喜欢他的人 $y$，和他同色的人 $z$ 。</p>
+<p>若 $x=y$，那么只有 $z$ 会和他连边，这时候不需要判断。</p>
+<p>否则，会有三人和他连边，并且如果询问集合 $\{p,y,z\}$，答案为 $1$ ，其他的所有可能答案都不为 $1$。</p>
+<p>所以通过这种方式可以找到每个人喜欢谁，进而得出答案。</p>
+<p>如果暴力的算，需要询问 $O(n^2)$ 次。</p>
+<p>我们考虑从前往后算谁和他连边，假设算到 $i$ 了，那么由于原图是二分图，点 $1\sim i-1$ 一定可以分成两个独立集，我们在每个独立集里二分询问即可。独立集可以用并查集维护。</p>
+<p>大概需要询问 $3n\log n+6n$ 次，然后进行毁灭性的卡常，可以做到询问 $18000$ 次左右。</p>
+<p><a href="https://loj.ac/submission/783198" target="_blank" rel="noopener">code</a>。</p>
+<h3 id="「ARC070F」HonestOrUnkind"><a href="#「ARC070F」HonestOrUnkind" class="headerlink" title="「ARC070F」HonestOrUnkind"></a>「ARC070F」HonestOrUnkind</h3><p>（今天听讲题听到的题，感觉特别有意思就写了下）</p>
+<p>首先如果 $b\geqslant a$ 就无解，因为这 $b$ 个人中可以分出 $a$ 个装作诚实的人来演你，也就是说这 $a$ 个人城市，其他人不诚实。</p>
+<p>考虑怎么找出一个诚实的人，我们维护一个栈，从 $1$ 到 $n$ 扫描：</p>
+<ul>
+<li>如果栈是空的，当前点入栈。</li>
+<li>否则询问栈顶，当前点是否诚实，如果回答诚实则入栈。</li>
+<li>否则弹出栈顶，扫描下一个点。</li>
+</ul>
+<p>容易发现，如果有一个诚实的人入栈，后面的人都诚实。</p>
+<p>并且最多就是一个诚实的人和一个不诚实的抵消，那么最后一定会剩下一个诚实的。</p>
+<p>所以最后栈顶是诚实的。共询问至多 $2n$ 次。</p>
+<p><a href="https://atcoder.jp/contests/arc070/submissions/11672929" target="_blank" rel="noopener">code</a>。</p>
+<h3 id="CF1332E-Height-All-the-Same"><a href="#CF1332E-Height-All-the-Same" class="headerlink" title="CF1332E. Height All the Same"></a>CF1332E. Height All the Same</h3><p>这 $\rm Div.2E$ 居然还蛮有意思的。</p>
+<p>首先对于一个状态，对于每个点能减二就减二，那么最后会剩下一个 $0,1$ 矩阵。</p>
+<p>考虑怎样的 $0,1$ 矩阵是合法的，我们考虑把一堆横着的多米诺骨横着首尾相叠放在一排，那么首尾是 $1$ ，其余多出来的是 $2$ ，这样我们可以把任意两个纵坐标相同的点加一，竖着的同理。</p>
+<p>所以我们可以把任意两个点加一。</p>
+<p>所以一个 $0,1$ 矩阵不合法，当且仅当 $0,1$ 的个数都为奇数。</p>
+<p>所以如果一开始 $nm$ 为奇数，所有情况都合法。</p>
+<p>否则考虑枚举偶数位置有几个，设 $x$ 为 $[l,r]$ 奇数个数， $y$ 为偶数个数，答案就是：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+ans&=\sum_{0\leqslant i\leqslant n,i\bmod 2=0} \binom{nm}{i}x^iy^{nm-i}\\
+&=\frac{(x+y)^{nm}+(x-y)^{nm}}{2}
+\end{align*}</script><p>算一下就好了。</p>
+<p><a href="https://codeforces.com/contest/1332/submission/75797836" target="_blank" rel="noopener">code</a>。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -389,7 +423,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3"><span class="nav-number">1.</span> <span class="nav-text">4.3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2019-12-Platinum」Greedy-Pie-Eaters"><span class="nav-number">1.1.</span> <span class="nav-text">「USACO 2019.12 Platinum」Greedy Pie Eaters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2020-2-Platinum」Equilateral-Triangles"><span class="nav-number">1.2.</span> <span class="nav-text">「USACO 2020.2 Platinum」Equilateral Triangles</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4"><span class="nav-number">2.</span> <span class="nav-text">4.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2019-12-Platinum」Bessie’s-Snow-Cow"><span class="nav-number">2.1.</span> <span class="nav-text">「USACO 2019.12 Platinum」Bessie’s Snow Cow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2019-12-Platinum」Tree-Depth"><span class="nav-number">2.2.</span> <span class="nav-text">「USACO 2019.12 Platinum」Tree Depth</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6"><span class="nav-number">3.</span> <span class="nav-text">4.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「JOISC-2020-Day2」有趣的-Joitter-交友"><span class="nav-number">3.1.</span> <span class="nav-text">「JOISC 2020 Day2」有趣的 Joitter 交友</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7"><span class="nav-number">4.</span> <span class="nav-text">4.7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「JOISC-2020-Day4」首都城市"><span class="nav-number">4.1.</span> <span class="nav-text">「JOISC 2020 Day4」首都城市</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3"><span class="nav-number">1.</span> <span class="nav-text">4.3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2019-12-Platinum」Greedy-Pie-Eaters"><span class="nav-number">1.1.</span> <span class="nav-text">「USACO 2019.12 Platinum」Greedy Pie Eaters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2020-2-Platinum」Equilateral-Triangles"><span class="nav-number">1.2.</span> <span class="nav-text">「USACO 2020.2 Platinum」Equilateral Triangles</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4"><span class="nav-number">2.</span> <span class="nav-text">4.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2019-12-Platinum」Bessie’s-Snow-Cow"><span class="nav-number">2.1.</span> <span class="nav-text">「USACO 2019.12 Platinum」Bessie’s Snow Cow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「USACO-2019-12-Platinum」Tree-Depth"><span class="nav-number">2.2.</span> <span class="nav-text">「USACO 2019.12 Platinum」Tree Depth</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6"><span class="nav-number">3.</span> <span class="nav-text">4.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「JOISC-2020-Day2」有趣的-Joitter-交友"><span class="nav-number">3.1.</span> <span class="nav-text">「JOISC 2020 Day2」有趣的 Joitter 交友</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7"><span class="nav-number">4.</span> <span class="nav-text">4.7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「JOISC-2020-Day4」首都城市"><span class="nav-number">4.1.</span> <span class="nav-text">「JOISC 2020 Day4」首都城市</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8"><span class="nav-number">5.</span> <span class="nav-text">4.8</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#「JOISC-2020-Day2」变色龙之恋"><span class="nav-number">5.1.</span> <span class="nav-text">「JOISC 2020 Day2」变色龙之恋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「ARC070F」HonestOrUnkind"><span class="nav-number">5.2.</span> <span class="nav-text">「ARC070F」HonestOrUnkind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1332E-Height-All-the-Same"><span class="nav-number">5.3.</span> <span class="nav-text">CF1332E. Height All the Same</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

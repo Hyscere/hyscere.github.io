@@ -269,7 +269,7 @@
         <p><a href="https://codeforces.com/contest/1098" target="_blank" rel="noopener">https://codeforces.com/contest/1098</a></p>
 <p>前面有些很没意思很简单的题我就不写题解了（</p>
 <a id="more"></a>
-<h2 id="C-Construct-a-tree"><a href="#C-Construct-a-tree" class="headerlink" title="C. Construct a tree"></a>C. Construct a tree</h2><p>首先如果$s&lt;2n-1$或者$s&gt;\frac{n(n+1)}{2}$就无解。</p>
+<h2 id="C-Construct-a-tree"><a href="#C-Construct-a-tree" class="headerlink" title="C. Construct a tree"></a>C. Construct a tree</h2><p>首先如果$s&lt;2n-1$或者$s&gt;\frac{n(n+1)}{2}$就无解。<!--2n-1$或者$s--></p>
 <p>否则可以按照以下构造出合法方案。</p>
 <p>首先把子树大小和转换成每个点的深度之和，显然这俩等价。</p>
 <p>那么最大的情况就是一条链，然后我们每次把一个叶子挂在他父亲深度减一的任意一个点上，那么答案恰好减一。</p>
