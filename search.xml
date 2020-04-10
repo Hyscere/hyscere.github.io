@@ -4350,7 +4350,7 @@ ans&=\sum_{0\leqslant i\leqslant n,i\bmod 2=0} \binom{nm}{i}x^iy^{nm-i}\\
 &=\frac{(x+y)^{nm}+(x-y)^{nm}}{2}
 \end{align*}</script><p>算一下就好了。</p>
 <p><a href="https://codeforces.com/contest/1332/submission/75797836" target="_blank" rel="noopener">code</a>。</p>
-<h2 id="4-8-1"><a href="#4-8-1" class="headerlink" title="4.8"></a>4.8</h2><p>开了场 $\rm CF$ ，<a href="https://codeforces.com/contest/1329" target="_blank" rel="noopener">比赛链接</a>。</p>
+<h2 id="4-9"><a href="#4-9" class="headerlink" title="4.9"></a>4.9</h2><p>开了场 $\rm CF$ ，<a href="https://codeforces.com/contest/1329" target="_blank" rel="noopener">比赛链接</a>。</p>
 <h3 id="CF1329A-Dreamoon-Likes-Coloring"><a href="#CF1329A-Dreamoon-Likes-Coloring" class="headerlink" title="CF1329A. Dreamoon Likes Coloring"></a>CF1329A. Dreamoon Likes Coloring</h3><p>构造题，很简单就不说了（</p>
 <p><a href="https://codeforces.com/contest/1329/submission/75944786" target="_blank" rel="noopener">code</a>。</p>
 <h3 id="B-Dreamoon-Likes-Sequences"><a href="#B-Dreamoon-Likes-Sequences" class="headerlink" title="B. Dreamoon Likes Sequences"></a>B. Dreamoon Likes Sequences</h3><p>有一个比较简单的性质：假设 $x$ 最高位为 $f(x)$ ，那么一个序列满足条件至少要保证 $f(a_i)&lt;f(a_{i+1})$。</p>
