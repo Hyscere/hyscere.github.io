@@ -46,17 +46,21 @@
   };
 </script>
 
-  <meta name="description" content="Hyscere的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hyscere">
-<meta property="og:url" content="http://yoursite.com/archives/2020/04/index.html">
+  <meta name="description" content="我发现网上好多博客写的都是错的。。。 甚至有些人没搞明白就写 真是绝了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论瞎扯">
+<meta property="og:url" content="http://yoursite.com/2020/04/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%9E%8E%E6%89%AF/index.html">
 <meta property="og:site_name" content="Hyscere">
-<meta property="og:description" content="Hyscere的博客">
+<meta property="og:description" content="我发现网上好多博客写的都是错的。。。 甚至有些人没搞明白就写 真是绝了">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/04/23/4drc15JaPTmNjvq.png">
+<meta property="article:published_time" content="2020-04-23T03:56:34.000Z">
+<meta property="article:modified_time" content="2020-04-23T07:22:51.081Z">
 <meta property="article:author" content="Hyscere">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/04/23/4drc15JaPTmNjvq.png">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/04/">
+<link rel="canonical" href="http://yoursite.com/2020/04/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%9E%8E%E6%89%AF/">
 
 
 <script id="page-configurations">
@@ -64,11 +68,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | Hyscere</title>
+  <title>博弈论瞎扯 | Hyscere</title>
   
 
 
@@ -193,70 +197,152 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">很好! 目前共计 96 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%9E%8E%E6%89%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hyscere">
+      <meta itemprop="description" content="Hyscere的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hyscere">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博弈论瞎扯
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-23 11:56:34 / 修改时间：15:22:51" itemprop="dateCreated datePublished" datetime="2020-04-23T11:56:34+08:00">2020-04-23</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <p>我发现网上好多博客写的都是错的。。。</p>
+<p>甚至有些人没搞明白就写 真是绝了</p>
+<a id="more"></a>
+<h2 id="Nim游戏"><a href="#Nim游戏" class="headerlink" title="Nim游戏"></a>Nim游戏</h2><p>Nim 游戏的定义如下：</p>
+<blockquote>
+<p>假设当前有 $n$ 堆石子，第 $i$ 堆有 $x_i$ 个，两个人轮流操作，每次操作可以选择一堆，然后移除任意多个石子（不能移除 $0$ 个）。</p>
+<p>不能操作的人失败，问是否先手必胜。</p>
+</blockquote>
+<p>然后这个游戏有一个很简单的解法，先给出答案：</p>
+<blockquote>
+<p>如果 $x_1\oplus x_2\oplus \cdots \oplus x_n=0$ ，则先手必败，否则先手必胜（其中 $\oplus$ 表示异或）。</p>
+</blockquote>
+<p>证明考虑使用数学归纳法：</p>
+<blockquote>
+<p>首先结束状态异或和为 $0$ 。</p>
+<p>然后分情况讨论：</p>
+<ul>
+<li>如果当前异或和为 $0$ ，那么你的一次移动必然会改变异或和，到达一个必胜状态，所以当前必败。</li>
+<li>否则，假设异或和为 $t$ ，找到 $t$ 的二进制最高位 $a$ ，然后我们找到一个 $x_i$ ，满足他第 $a$ 位是 $1$ （必然能找到，不然异或和这一位为 $0$ ），然后把他改成 $x\oplus t$ 即可（肯定是会减小的），那么此时到达了一个必败状态。</li>
+</ul>
+</blockquote>
+<h2 id="任意公平博弈游戏与-Nim-游戏的转化"><a href="#任意公平博弈游戏与-Nim-游戏的转化" class="headerlink" title="任意公平博弈游戏与 Nim 游戏的转化"></a>任意公平博弈游戏与 Nim 游戏的转化</h2><h3 id="可以添加石子的-Nim"><a href="#可以添加石子的-Nim" class="headerlink" title="可以添加石子的 Nim"></a>可以添加石子的 Nim</h3><p>我们给 Nim 游戏加两条规则：</p>
+<ul>
+<li>不能循环。</li>
+<li>每次操作可以给一堆增加若干石子。</li>
+</ul>
+<p>可以用归纳法简单证明，新添的两条规则没有意义，也就是说不会用到添加石子这个条件。</p>
+<ul>
+<li>如果当前必胜，那显然不会用到。</li>
+<li>否则，如果你给某一堆加了一些石子，另一个人立刻拿掉这些即可。因为不能循环，所以你最终还是要拿掉某些石子。</li>
+</ul>
+<h3 id="SG函数"><a href="#SG函数" class="headerlink" title="SG函数"></a>SG函数</h3><p>对于一个双人公平博弈游戏，首先我们把一个状态看成一个点，如果一个状态可以到另一个状态，我们就连一条有向边。</p>
+<p>如果这个图有环，要么有些环边用不上，要么游戏陷入循环。</p>
+<p>我们给这个游戏加一条规则：不能循环（这条规则基本上是默认的）。</p>
+<p>那么我们可以得到一个无环的图。</p>
+<p>对于一个点，我们定义一个函数 $sg(x)$ ，并有如下转移式：</p>
+<script type="math/tex; mode=display">
+sg(x)={\rm mex}\{v_1,v_2\cdots ,v_k\}</script><p>其中 $v_i$ 表示 $x$ 指向的所有点， $\rm mex$ 函数 (minimum exludant) 表示不在当前集合内的最大非负整数。</p>
+<p>举个例子：$\rm mex\{0,1,3\}=2,mex\{1\}=0$。</p>
+<p>注意到根据 sg 函数的性质可以发现，sg 函数的值不超过 $\sqrt n$ 。</p>
+<h3 id="转化为-Nim"><a href="#转化为-Nim" class="headerlink" title="转化为 Nim"></a>转化为 Nim</h3><p>其实就是说，假设当前起始状态为 $x$ ，那么可以看作是一个 $n=1,a_1=sg(x)$ 的 Nim 游戏。</p>
+<p>显然你每次可以任意减小 sg 值，或者增大特定的值，但是先前讨论过了增大是无意义的，所以这两者等价。</p>
+<h3 id="这东西有啥用"><a href="#这东西有啥用" class="headerlink" title="这东西有啥用"></a>这东西有啥用</h3><p>首先可以发现，对于一个游戏，如果  $sg(x)=0$ 则当前状态必败，否则必胜。</p>
+<p>但是这个显然是没用的。。。只需要记录 $0/1$ 可以做到一样的事情。</p>
+<p>这玩意 nb 的地方就在于，如果你现在有多个毫不相关的游戏，你每次可以操作某个游戏一次，如果不能操作就输了，这样你就可以把每个游戏都转化成 Nim ，然后根据上面的结论，只需要把 sg 函数异或起来，判断是否为 0 即可。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>正好在一个网站上看到了一道有趣的题，我就贴上来好了：</p>
+<p><img src="https://i.loli.net/2020/04/23/4drc15JaPTmNjvq.png" alt=""> </p>
+<hr>
+<p>然后最近还做了一道题：<a href="https://atcoder.jp/contests/agc043/tasks/agc043_c" target="_blank" rel="noopener">agc043</a>，这个对 sg 的应用挺基础的，倒是其他部分有点难度。</p>
+<p><del>别的没了，网上那些博客例题超多，就是讲的不对</del></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-23T11:56:34+08:00"
-              content="2020-04-23">
-          04-23
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/04/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%9E%8E%E6%89%AF/" itemprop="url">
-            <span itemprop="name">博弈论瞎扯</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-03T21:38:18+08:00"
-              content="2020-04-03">
-          04-03
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/04/03/%E6%9C%80%E8%BF%91%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
-            <span itemprop="name">最近的做题记录</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/03/%E6%9C%80%E8%BF%91%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="prev" title="最近的做题记录">
+      <i class="fa fa-chevron-left"></i> 最近的做题记录
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -307,6 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nim游戏"><span class="nav-number">1.</span> <span class="nav-text">Nim游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任意公平博弈游戏与-Nim-游戏的转化"><span class="nav-number">2.</span> <span class="nav-text">任意公平博弈游戏与 Nim 游戏的转化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可以添加石子的-Nim"><span class="nav-number">2.1.</span> <span class="nav-text">可以添加石子的 Nim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SG函数"><span class="nav-number">2.2.</span> <span class="nav-text">SG函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转化为-Nim"><span class="nav-number">2.3.</span> <span class="nav-text">转化为 Nim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这东西有啥用"><span class="nav-number">2.4.</span> <span class="nav-text">这东西有啥用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题"><span class="nav-number">3.</span> <span class="nav-text">例题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -516,16 +603,6 @@
     
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
-        priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'http://yoursite.com/archives/2020/04/',]
-      });
-      });
-  </script>
 
 </body>
 </html>
