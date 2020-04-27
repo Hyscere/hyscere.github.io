@@ -46,19 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="题目链接：https:&#x2F;&#x2F;codeforces.com&#x2F;contest&#x2F;1270&#x2F;problem&#x2F;G。 本场难度：$\rm G&lt;H&lt;D&lt;E&lt;F$（会写$\rm G,H$但是不会$\rm E,F$的垃圾选手发出感叹）这就是你掉分的借口">
+  <meta name="description" content="题目链接：https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;agc041&#x2F;tasks&#x2F;agc041_d。 AGC 还是顶。。这些解法太巧妙了。。我都不知道是怎么想出来的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「CF1270G」Subset with Zero Sum">
-<meta property="og:url" content="http://yoursite.com/2019/12/30/%E3%80%8CCF1270G%E3%80%8DSubset-with-Zero-Sum/index.html">
+<meta property="og:title" content="「AGC041D」Problem Scores">
+<meta property="og:url" content="http://yoursite.com/2020/04/27/%E3%80%8CAGC041D%E3%80%8DProblem-Scores/index.html">
 <meta property="og:site_name" content="Hyscere">
-<meta property="og:description" content="题目链接：https:&#x2F;&#x2F;codeforces.com&#x2F;contest&#x2F;1270&#x2F;problem&#x2F;G。 本场难度：$\rm G&lt;H&lt;D&lt;E&lt;F$（会写$\rm G,H$但是不会$\rm E,F$的垃圾选手发出感叹）这就是你掉分的借口">
+<meta property="og:description" content="题目链接：https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;agc041&#x2F;tasks&#x2F;agc041_d。 AGC 还是顶。。这些解法太巧妙了。。我都不知道是怎么想出来的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-30T03:42:05.000Z">
-<meta property="article:modified_time" content="2019-12-30T03:45:52.506Z">
+<meta property="article:published_time" content="2020-04-27T13:06:37.000Z">
+<meta property="article:modified_time" content="2020-04-27T13:32:03.626Z">
 <meta property="article:author" content="Hyscere">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/30/%E3%80%8CCF1270G%E3%80%8DSubset-with-Zero-Sum/">
+<link rel="canonical" href="http://yoursite.com/2020/04/27/%E3%80%8CAGC041D%E3%80%8DProblem-Scores/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>「CF1270G」Subset with Zero Sum | Hyscere</title>
+  <title>「AGC041D」Problem Scores | Hyscere</title>
   
 
 
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/%E3%80%8CCF1270G%E3%80%8DSubset-with-Zero-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/%E3%80%8CAGC041D%E3%80%8DProblem-Scores/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          「CF1270G」Subset with Zero Sum
+          「AGC041D」Problem Scores
         </h1>
 
         <div class="post-meta">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-30 11:42:05 / 修改时间：11:45:52" itemprop="dateCreated datePublished" datetime="2019-12-30T11:42:05+08:00">2019-12-30</time>
+              <time title="创建时间：2020-04-27 21:06:37 / 修改时间：21:32:03" itemprop="dateCreated datePublished" datetime="2020-04-27T21:06:37+08:00">2020-04-27</time>
             </span>
 
           
@@ -245,13 +245,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>题目链接：<a href="https://codeforces.com/contest/1270/problem/G" target="_blank" rel="noopener"></a><a href="https://codeforces.com/contest/1270/problem/G" target="_blank" rel="noopener">https://codeforces.com/contest/1270/problem/G</a>。</p>
-<p>本场难度：$\rm G&lt;H&lt;D&lt;E&lt;F$（会写$\rm G,H$但是不会$\rm E,F$的垃圾选手发出感叹）<del>这就是你掉分的借口</del></p>
+        <p>题目链接：<a href="https://atcoder.jp/contests/agc041/tasks/agc041_d" target="_blank" rel="noopener">https://atcoder.jp/contests/agc041/tasks/agc041_d</a>。</p>
+<p>AGC 还是顶。。这些解法太巧妙了。。我都不知道是怎么想出来的</p>
 <a id="more"></a>
-<p>把题目给的限制条件变一下就是：$1\leqslant i-a_i\leqslant n$。</p>
-<p>令$b_i=i-a_i$，只需要找到一些$b_i$满足$\sum b_i=\sum i$即可。</p>
-<p>把每个$b_i$看做指针，那么就形成了一个置换，随便找一个环输出即可。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>{</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);}</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> data asd09123jdf02i3h</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n,a[maxn],vis[maxn];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>{</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) read(a[i]),a[i]=i-a[i],vis[i]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">if</span>(a[i]==i) {<span class="built_in">printf</span>(<span class="string">"1\n%d\n"</span>,i);<span class="keyword">return</span> ;}</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(!vis[x]) vis[x]=<span class="number">1</span>,x=a[x];</span><br><span class="line">    <span class="keyword">int</span> v=a[x];<span class="built_in">vector</span>&lt;<span class="keyword">int</span> &gt; ans;ans.pb(x);</span><br><span class="line">    <span class="keyword">while</span>(v!=x) ans.pb(v),v=a[v];</span><br><span class="line">    write(ans.size());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> x:ans) <span class="built_in">printf</span>(<span class="string">"%d "</span>,x);<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> t;read(t);<span class="keyword">while</span>(t--) solve();    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>首先题目那么长一段话的限制其实等价于，令 $k=n/2$ ，要满足 $\sum_{i=1}^{k+1}A_i&gt; \sum_{i=n-k+1}^n A_i$。</p>
+<p>然后还要求 $A_i$ 递增。</p>
+<p>看到后面这个要求，不妨搞一个 $A_i$ 的差分数组 $a_i$ ，那么限制就变成了：</p>
+<script type="math/tex; mode=display">
+1+\sum_{i=1}^{k+1}(k-i+2)a_i>\sum_{i=1}^{n-k}ka_i+\sum_{i=n-k+1}^{n}(n-i+1)a_i</script><p>整理一下得到：</p>
+<script type="math/tex; mode=display">
+[a_1,a_2\cdots a_n]\cdot [-1,0,1,2,3\cdots ,3,2,1]\geqslant 0</script><script type="math/tex; mode=display">
+\sum a_i<n</script><p>（ $\cdot$ 为点积）。</p>
+<p>如果我们确定了 $a_2\sim a_n$ ，那么对 $a_1$ 的限制为：</p>
+<script type="math/tex; mode=display">
+a_1\leqslant[a_1,a_2\cdots a_n]\cdot [0,1,2,3\cdots ,3,2,1]\\
+a_1\geqslant n-\sum_{i=2}^na_i-1</script><p>若设 $[a_1,a_2\cdots a_n]\cdot [0,1,2,3\cdots ,3,2,1]=x~,~\sum_{i=2}^na_i=y$  ，那么 $a_1$ 可以取的值有 $\max(0,n-x-y)$种。</p>
+<p>注意到我们只关心 $x+y$ 的取值，且 $x+y=[a_1,a_2\cdots a_n]\cdot [1,2,3,4\cdots ,3,2,1]$。</p>
+<p>而且此时对 $a_i$ 的限制为，只要是正整数即可。（否则 $x+y$ 必然大于等于 $n$）。</p>
+<p>那么显然可以用一个简单的 $O(n^2)$  dp 算出每个 $x+y$ 有多少种情况，进而得到答案。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>{</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch=getchar()) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=-f;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch=getchar()) x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;x*=f;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;print(x/<span class="number">10</span>),<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="number">48</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{<span class="keyword">if</span>(!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">else</span> print(x);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);}</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lf double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> vec vector<span class="meta-string">&lt;int &gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> data asd09123jdf02i3h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,l,r) for(int i=l,i##_r=r;i&lt;=i##_r;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> lf eps = <span class="number">1e-8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,mod,f[<span class="number">5005</span>][<span class="number">5005</span>],a[maxn],g[<span class="number">10002</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    read(n),read(mod);</span><br><span class="line">    f[<span class="number">1</span>][n]=<span class="number">1</span>;a[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>,j=n;i&lt;=j;i++,j--) a[i]=a[j]=a[i<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">2</span>;x&lt;=n;x++) </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i;i--) f[x][i]=((i+a[x]&lt;=n?f[x][i+a[x]]:<span class="number">0</span>)+f[x<span class="number">-1</span>][i])%mod;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) ans=(ans+<span class="number">1l</span>l*i*f[n][i]%mod)%mod;</span><br><span class="line">    write(ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -285,13 +297,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/27/%E3%80%8CCF712E%E3%80%8DMemory-and-Casinos/" rel="prev" title="「CF712E」Memory and Casinos">
-      <i class="fa fa-chevron-left"></i> 「CF712E」Memory and Casinos
+    <a href="/2020/04/23/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%9E%8E%E6%89%AF/" rel="prev" title="博弈论瞎扯">
+      <i class="fa fa-chevron-left"></i> 博弈论瞎扯
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/01/02/%E3%80%8CCF1287F%E3%80%8DCards/" rel="next" title="「CF1287F」Cards">
-      「CF1287F」Cards <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
